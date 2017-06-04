@@ -1,0 +1,1786 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Las Delicias</title>
+	<meta charset="UTF-8">
+	<link rel="Stylesheet" type="text/css" href="http://urblasdelicias.com/_css/reset.css" media="screen" />
+	<link rel="Stylesheet" type="text/css" href="http://urblasdelicias.com/_css/style.css" media="screen"/>
+	<link rel="Stylesheet" type="text/css" href="http://urblasdelicias.com/_css/ocm_style.css" media="screen" />
+	<link rel="Stylesheet" type="text/css" href="http://urblasdelicias.com/_css/fileManager.css" media="screen" />
+	<link rel="Stylesheet" type="text/css" href="http://urblasdelicias.com/_css/visitorLog.css" media="screen" />
+	<link rel="Stylesheet" type="text/css" href="http://urblasdelicias.com/_css/modules.css" media="screen" />
+	<link rel="Stylesheet" type="text/css" href="http://urblasdelicias.com/_css/buysell.css" media="screen" />
+	<link rel="Stylesheet" type="text/css" href="http://urblasdelicias.com/_css/bazaar.css" media="screen" />
+	<link rel="Stylesheet" type="text/css" href="http://urblasdelicias.com/_css/global.css" media="screen" />
+	<link rel="Stylesheet" type="text/css" href="http://urblasdelicias.com/_css/print.css" media="print" />
+	<link rel="Stylesheet" type="text/css" href="https://code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css" />
+	<link rel="Stylesheet" type="text/css" href="http://urblasdelicias.com/jquery/validateThis.css" />
+	<link rel="stylesheet" href="http://urblasdelicias.com/css/tiles.css" />
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+	<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+	<script src="//code.jquery.com/ui/1.11.3/jquery-ui.min.js"></script>	
+	<script src='//code.jquery.com/jquery-migrate-1.2.1.min.js'></script>
+	<script src="http://urblasdelicias.com/jquery/jquery.ui.position.js"></script>	
+	<script src="http://urblasdelicias.com/jquery/jquery-corner.js"></script>
+	<script src="http://urblasdelicias.com/jquery/jquery-corner.js"></script>
+	<script src="http://urblasdelicias.com/jquery/jquery.mousewheel.js"></script>
+	<script src="http://urblasdelicias.com/jquery/validateThis.js"></script>
+	<script src="http://urblasdelicias.com/_js/buysell.js"></script>
+	<script src="http://urblasdelicias.com/_js/bazaar.js"></script> 
+	<script src="http://urblasdelicias.com/_js/global.js"></script>
+	<script src="http://urblasdelicias.com/js/tabs.js"></script>
+	<script src="http://urblasdelicias.com/js/hideables.js"></script>
+	<script language="javascript">
+	$.curCSS = function (element, attrib, val) {
+		$(element).css(attrib, val);
+	};
+	function example_ajax_request(url) {
+		$("#contentloader").prepend("<div id='content-loading-overlay' style='position: absolute; display: none; z-index: 999; left: 0; top: 0; bottom: 0; right: 0; background-color: rgba(0, 0, 0, 0.4);'><div style='width: 250px; margin-left: auto; margin-right: auto; margin-top: 30px; background-color: white; padding: 30px;'><center><img src='/images/preloader.gif' style='width: 64px;'><br><span style='font-size: 25px;' id='content-loading-status'>Loading...</span></center></div></div>");
+		$('#content-loading-overlay').fadeIn(200);
+		// localStorage.lastRequest = 'module.php?module='+url;
+		$('#contentloader').load('module.php?module='+url, "",
+			function(responseText, textStatus, XMLHttpRequest) {
+				if(textStatus == 'error') {
+					$('#content-loading-status').html('An error occured');
+				}
+				$(window).trigger('load-hideables');
+			}
+		);
+	}
+
+	/*function rlr() {
+		$("#contentloader").prepend("<div id='content-loading-overlay' style='position: absolute; display: none; z-index: 999; left: 0; top: 0; bottom: 0; right: 0; background-color: rgba(0, 0, 0, 0.4);'><div style='width: 250px; margin-left: auto; margin-right: auto; margin-top: 30px; background-color: white; padding: 30px;'><center><img src='/images/preloader.gif' style='width: 64px;'><br><span style='font-size: 25px;' id='content-loading-status'>Loading...</span></center></div></div>");
+		$('#content-loading-overlay').fadeIn(200);
+		$('#contentloader').load(localStorage.lastRequest,
+			function(responseText, textStatus, XMLHttpRequest) {
+				if(textStatus == 'error') {
+					$('#content-loading-status').html('An error occured');
+				}
+			}
+		);
+	}*/
+
+	$(function() {
+		/*$('body').on('mouseenter', '[onclick], a[href]', function(event) {
+			$debug = $('#modulelink_debug').first();
+
+			$debug.show();
+
+			$debug.css('left', (event.clientX + 20) + 'px');
+			$debug.css('top', (event.clientY - 40) + 'px');
+
+			if ($(this).attr('onclick'))
+				$debug.html('<b>DEBUG:</b> ' + $(this).attr('onclick'));
+			else
+				$debug.html('<b>DEBUG:</b> ' + $(this).attr('href'));
+		});
+
+		$('body').on('mousemove', '[onclick], a[href]', function(event) {
+			$debug = $('#modulelink_debug').first();
+
+			$debug.css('left', (event.clientX + 20) + 'px');
+			$debug.css('top', (event.clientY - 40) + 'px');
+		});
+
+
+		$('body').on('mouseleave', '[onclick], a[href]', function(event) {
+			$debug = $('#modulelink_debug').first();
+
+			$debug.hide();
+		});*/
+
+		$(document).on('click', '.taskmessage_vote', function() {
+			var $button = $(this);
+			$button.closest('.message_votes').find('.vote_up').attr('src', 'http://cdn.urbytus.net/_icons/comment-like.png');
+			$button.closest('.message_votes').find('.vote_down').attr('src', 'http://cdn.urbytus.net/_icons/comment-dislike.png');
+			$.ajax({
+				url: '_ajax_task_comment_vote.php',
+				method: 'POST',
+				dataType: 'JSON',
+				data: {
+					messageId: $button.attr('data-comment-id'),
+					vote: ($button.attr('data-vote') == '1') ? '1' : '-1'
+				},
+				success: function(data) {
+					if (data.success) {
+						$button.closest('.message_votes').find('.message_votes_up').html(data.likeCount);
+						$button.closest('.message_votes').find('.message_votes_down').html(data.dislikeCount);
+
+						if ($button.hasClass('vote_up'))
+							$button.attr('src', 'http://cdn.urbytus.net/_icons/comment-like-active.png');
+						else
+							$button.attr('src', 'http://cdn.urbytus.net/_icons/comment-dislike-active.png');
+
+						if (data.likePeople.length > 0) {
+							var likePeopleContent = '<b>' + "Likes" + '</b><br>';
+							for (var i=0; i<data.likePeople.length; i++) {
+								likePeopleContent += data.likePeople[i] + '<br>';
+							}
+							$button.closest('.message_votes').find('.message_upvotes_people').html(likePeopleContent);
+						} else {
+							$button.closest('.message_votes').find('.message_upvotes_people').html("<b>No Likes<\/b>");
+						}
+
+						if (data.dislikePeople.length > 0) {
+							var dislikePeopleContent = '<b>' + "Dislikes" + '</b><br>';
+							for (var i=0; i<data.dislikePeople.length; i++) {
+								dislikePeopleContent += data.dislikePeople[i] + '<br>';
+							}
+							$button.closest('.message_votes').find('.message_downvotes_people').html(dislikePeopleContent);
+						} else {
+							$button.closest('.message_votes').find('.message_downvotes_people').html("<b>No Dislikes<\/b>");
+						}
+					} else {
+						alert(data.message);
+					}
+				}
+			});
+		});
+
+		$(document).on('mouseenter', '.taskmessage_vote', function() {
+			var $button = $(this);
+			if ($button.attr('data-vote') == '1') {
+				$button.closest('.message_votes').find('.message_upvotes_people').show();
+				$button.closest('.message_votes').find('.message_downvotes_people').hide();
+			} else {
+				$button.closest('.message_votes').find('.message_upvotes_people').hide();
+				$button.closest('.message_votes').find('.message_downvotes_people').show();
+			}
+		});
+
+		$(document).on('mouseleave', '.taskmessage_vote', function() {
+			var $button = $(this);
+			$button.closest('.message_votes').find('.message_upvotes_people').hide();
+			$button.closest('.message_votes').find('.message_downvotes_people').hide();
+		});
+	});
+	 </script>
+	 <link rel="shortcut icon" type="image/png" href="/favicon.png"/>
+</head>
+
+<body>
+<!-- This header is only used for Portal 77 - Las Delicias -->
+
+<div class="strip1">
+	<div id="header">
+
+		<div id="top">
+			<h1 style="margin-left:10px;" ><a href="http://urblasdelicias.com">Las Delicias</a></h1>
+
+			<div class="thumbs" style="position:relative; margin-right:6px;top:3px;float:right;">
+				<map name="FPMap0">
+					<area href="http://DeCottaLaw.com" shape="rect" coords="1, 1, 291, 58" target="_blank">
+					<area href="http://decottaproperty.net" shape="rect" coords="294, 1, 579, 59" target="_blank"> </map>
+				<img border="0" src="http://cdn.urbytus.net/Sponsors/DeCotta_WebBanner500x60.jpg" width="580" height="60" usemap="#FPMap0">
+				</a>
+			</div>
+
+			<span class="clearFix">&nbsp;</span>
+		</div>
+	</div>
+
+</div>
+
+<div class="strip2">
+	<div id="header2">
+		
+
+
+<style type="text/css">
+@charset "UTF-8";
+
+/**
+ * Horizontal CSS Drop-Down Menu Module
+ *
+ * @file		dropdown.css
+ * @package		Dropdown
+ * @version		0.7.1
+ * @type		Transitional
+ * @stacks		597-599
+ * @browsers	Windows: IE6+, Opera7+, Firefox1+
+ *				Mac OS: Safari2+, Firefox2+
+ *
+ * @link		http://www.lwis.net/
+ * @copyright	2006-2008 Live Web Institute. All Rights Reserved.
+ *
+ */
+
+ul.dropdown,
+ul.dropdown li,
+ul.dropdown ul {
+ list-style: none;
+ margin: 0;
+ padding: 0;
+}
+
+ul.dropdown {
+ position: relative;
+ z-index: 597;
+ float: left;
+}
+
+ul.dropdown li {
+ float: left;
+ line-height: 1.3em;
+ vertical-align: middle;
+ zoom: 1;
+}
+
+ul.dropdown li.hover,
+ul.dropdown li:hover {
+ position: relative;
+ z-index: 599;
+ cursor: default;
+}
+
+ul.dropdown ul {
+ visibility: hidden;
+ position: absolute;
+ top: 100%;
+ left: 0;
+ z-index: 598;
+ width: 100%;
+}
+
+ul.dropdown ul li {
+ float: none;
+}
+
+ul.dropdown ul ul {
+ top: 1px;
+ left: 99%;
+}
+
+ul.dropdown li:hover > ul {
+ visibility: visible;
+}
+
+
+
+
+
+ul.dropdown li.rtl ul {
+ top: 100%;
+ right: 0;
+ left: auto;
+}
+
+ul.dropdown li.rtl ul ul {
+ top: 1px;
+ right: 99%;
+ left: auto;
+}
+</style><style type="text/css">
+@charset "UTF-8";
+
+/** 
+ * Abobe Advanced CSS Drop-Down Menu Theme
+ *
+ * @file		default.advanced.css
+ * @name		Adobe
+ * @version		0.1
+ * @type		transitional
+ * @browsers	Windows: IE5+, Opera7+, Firefox1+
+ *				Mac OS: Safari2+, Firefox2+
+ *
+ * @link		http://www.lwis.net/
+ * @copyright	2008 Live Web Institute. All Rights Reserved.
+ *
+ */
+
+ul.dropdown {
+ font: bold 12px Arial, Helvetica, sans-serif;
+}
+
+	ul.dropdown li {
+	padding: 7px 12px;
+	/*background-color: #00CC33;*/
+	color: #333333;
+	}
+
+	ul.dropdown li.hover,
+	ul.dropdown li:hover {
+	 background-color: #b4b6ac;
+	}
+
+	ul.dropdown a:link,
+	ul.dropdown a:visited { color: #000; text-decoration: none; }
+	ul.dropdown a:hover { color: #000; text-decoration: underline; }
+	ul.dropdown a:active {
+	color: #333333;
+}
+
+
+/* ----- END LEVEL */
+
+
+	/* ----- NON-FIRST LEVEL */
+
+	ul.dropdown ul {
+	 margin-left: -6px;
+	 width: 170px;
+	 padding-bottom: 9px;
+	 background: url(images/menu3/dropdown_pane.png) 0 100% no-repeat;
+	 color: #000;
+	 font-size: 11px;
+	 font-weight: normal;
+	 
+	}
+
+		ul.dropdown ul li {
+		 background-color: transparent;
+		 color: #000;
+		}
+
+		ul.dropdown ul li.hover,
+		ul.dropdown ul li:hover {
+		 background-color: transparent;
+		}
+
+		ul.dropdown ul li.empty {
+		 padding: 12px 12px 7px !important;
+		 font-weight: bold;
+		}
+
+		ul.dropdown ul a:link,
+		ul.dropdown ul a:visited { color: #000; }
+		ul.dropdown ul a:hover { color: #000; text-decoration: none; }
+		ul.dropdown ul a:active { color: #000; }
+
+			ul.dropdown ul ul {
+			 display: none;
+			}
+
+			ul.dropdown ul ul li {}
+
+/* ----- END LEVEL */
+
+
+
+/*------------------------------------------------------------------------------------------------------/
+ * @section	Support Class 'dir'
+ * @level sep	ul, .class
+ */
+
+
+/* ----- ALL LEVELS (incl. first) */
+
+ul.dropdown *.dir {
+ padding-right: 12px;
+ background-image: none;
+ background-position: 100% 50%;
+ background-repeat: no-repeat;
+}
+
+/* ----- END LEVEL */
+
+
+
+
+/* Components override */
+
+ul.dropdown-horizontal ul *.dir {
+ padding-right: 15px;
+ background-image: url(images/menu3/nav-arrow-right.png);
+ background-position: 100% 50%;
+ background-repeat: no-repeat;
+}
+
+ul.dropdown-vertical *.dir {
+ background-image: url(images/menu3/nav-arrow-right.png);
+}
+
+ul.dropdown-vertical-rtl *.dir {
+ padding-right: 15px;
+ background-image: url(images/menu3/nav-arrow-left.png);
+ background-position: 0 50%;
+}
+
+
+
+	ul.dropdown li a { /* Moved from 'custom' section */
+	 display: block;
+	 padding: 12px 12px;
+	}
+
+
+/* ------------- Override default */
+
+	ul.dropdown li {
+	 padding: 0;
+	}
+
+
+/* ------------- Reinitiate default: post-override activities  */
+
+	ul.dropdown li.dir {
+	 padding: 7px 20px 7px 12px;
+	}
+
+	ul.dropdown ul li.dir {
+	 padding-right: 15px;
+	}
+
+
+/* ------------- Custom */
+
+	ul.dropdown li {
+
+	}
+
+
+	/* Especially for IE6 or lower */
+
+	ul.dropdown ul a {
+	 padding: 4px 5px 4px 12px;
+	 /*width: 139px;*/
+	}
+
+	ul.dropdown ul a:hover {
+	padding: 3px 5px 3px 11px;
+	border: solid 1px #ddd;
+	background-color: #b4b6ac;
+	font-weight: bold;
+	}
+
+	ul.dropdown ul a.dir {
+	 /*width: 129px;*/
+	}
+	
+	
+	
+	
+	
+	
+	
+</style>
+
+<!--[if lt IE 7]>
+<script type="text/javascript" src="css/js/jquery/jquery.js"></script>
+<script type="text/javascript" src="css/js/jquery/jquery.dropdown.js"></script>
+<![endif]-->
+<div class="topBar">
+<ul id="nav" class="dropdown dropdown-horizontal">
+	<li>
+		<a href="./index.php" style="color: #fff;">MENU &#0187;</a>
+		<!--[if IE]>
+			<ul>
+				<li><a	href="index.php">Home</a></li>
+				 <li><a	onClick="this.style.behavior='url(#default#homepage)'; this.setHomePage('http://urblasdelicias.com');"  href="#">Make this your Homepage</a></li>
+			</ul>
+		<![endif]-->
+	</li>
+	
+    <li><a href="./" class="dir">Community</a>
+    <ul>
+            <li><a onclick="example_ajax_request('about/about.php')" href="#">Description</a></li>
+    	            <li><a onclick="example_ajax_request('compictures/compictures.php')" href="#">Photo Gallery</a></li>
+    	            <li><a onclick="example_ajax_request('news.php')" href="#">News</a></li>
+    	            <li><a onclick="example_ajax_request('buysell/index.php')" href="#">Buy / Rent / Sell</a></li>
+    	            <li><a onclick="example_ajax_request('communityRules/communityRules.php')" href="#">Community Rules</a></li>
+    	            <li><a onclick="example_ajax_request('agm/agm.php')" href="#">Community Meetings</a></li>
+    	            <li><a onclick="example_ajax_request('administrator.php')" href="#">Community Administrator</a></li>
+    	            <li><a onclick="example_ajax_request('services.php')" href="#">Services & Numbers</a></li>
+    	            <li><a onclick="example_ajax_request('bazaar/bazaar.php')" href="#">Bazaar</a></li>
+    		</ul>    
+	</li>
+    
+    
+    
+
+
+      
+
+
+
+  <li><a href="./" class="dir">Information</a>
+    <ul>
+            <li><a onclick="example_ajax_request('services.php')" href="#">Useful Numbers</a></li>
+    	            <li><a onclick="example_ajax_request('links.php')" href="#">Useful Information</a></li>
+    	            <li><a onclick="example_ajax_request('hpropertylaw.php')" href="#">Horizontal Property Law</a></li>
+    	     
+	</ul>    
+	</li>
+    
+   
+    
+
+
+
+    
+    
+
+
+
+
+
+
+
+
+
+        
+    
+     </ul>
+ 
+ 
+ </div>
+ 		<div style="float:right;margin-top:10px;">
+			<script type="text/javascript">
+<!--
+function MM_jumpMenu(targ,selObj,restore){ //v3.0
+  eval(targ+".location='"+selObj.options[selObj.selectedIndex].value+"'");
+  if (restore) selObj.selectedIndex=0;
+}
+//-->
+</script>
+<form action="" method="get" name="langForm" target="_self" id="langForm"  >
+
+<select name="selectLang" onchange="document.langForm.submit();" >
+<option value="" >Select Language</option>
+<option value="EN" >English</option><option value="ES" >Español</option></select>
+
+
+</form>
+		</div>
+		
+<p style="text-align: right;float: right;color: #333;margin: 13px 20px 0 0;">
+<b>29-05-2017</b></p>		<span class="clearFix">&nbsp;</span>
+	</div><!-- end of #header -->
+</div> 
+
+
+
+
+
+<div id="container">
+
+<div id="content">
+
+
+<script type="text/javascript" src="./include/ticker.js"></script>
+        <script>
+                $(document).ready(function () {
+                    $('#tickerFade').list_ticker({
+                        speed: 4000,
+                        effect: 'fade'
+                    });
+                });
+        </script>
+
+	<div id="right-col" >
+				<!-- Login Box -->
+				
+
+
+<div class="box" style='position: relative;'>
+    <form id="loginForm" name="loginForm" method="post" action="/index.php" onsubmit="return doLogin();">
+        <input name="formId" id="formId" type="hidden" value="loginForm" />
+        <input name="hashedpass" id="hashedpass" type="hidden" value="" />
+        <input name="hashedpass2" id="hashedpass2" type="hidden" value="" />
+        <h4 class="roundedlight-blue">Login</h4>
+        <div class="box-container">
+                        <div style="text-align:center; color:#FF0000;"><strong></strong></div>
+
+            <label style="float: left;width: 90px;margin-right: 17px;font-size: 10px;">Username</label>
+            <label style="float: left;width: 90px;font-size: 10px;">Password:</label>
+            <br clear="all" />
+
+            <input name="username" type="text" class="username-field"  id="username" style="width: 90px;margin-right: 8px;" />
+            <input name="password" type="password" id="password"  class="username-field" style="width: 90px;" />
+            <br clear="all" />
+
+            <a href="?module=resetPassword.php"  class="grey_link" style="float: left;width: 95px;">Forgot password</a>
+
+            <label class="uiButtonlabel uiButton uiButtonMedium" style="padding: 0 12px;float: right;width: 70px;">
+                <input type="submit" tabindex="3" value="Login" />
+            </label>
+            <br clear="all" /><br />
+        </div>
+    </form>
+        <br clear="all" />
+
+</div>
+<!-- end of div.box -->
+
+<script src="/js/sha512.js"></script>
+
+<script>
+					$(function() {
+				$('#UserName').focus();
+			});
+		        function doLogin() {
+            $('#hashedpass').val(hex_sha512($('#password').val()));
+            $('#hashedpass2').val(hex_sha512($('#password').val().trim()));
+            $('#password').attr('disabled', 'disabled');
+            return true;
+        }
+</script>
+
+
+
+
+
+				<!-- End Login Box -->
+			   
+
+				<!-- Community OFFICE Box -->
+				  <!-- Community Office Box -->
+	<!--  END Of Community Administrator Box -->				<!--  END Of Community Office Box -->		   
+				   
+				   
+				<!-- Community Administrator Box -->
+				  	<!-- Community Administrator Box 
+	This box fetches and displays the Community Administrator box in the OCM Pages.
+	-->
+	
+		  			   <div class="box" style="width: 220px; border-radius:5px; background-color:white;">
+			   <div class="box-round" style="padding: 0px 0px 0px 0px;cursor: pointer;background: transparent;border: 0;" onclick="example_ajax_request('administrator.php')">
+
+<!--  We have to Add the-- If the Administrator Belongs to the College Show Lang 66 and if Not Show 177   // Requested by Ali March 2015 -->
+
+			   <h4 class="roundedlight-blue" id="servBox">Community Administrator</h4>
+
+<!-- If the Administrator Belongs to the College Show Lang 66 and if Not Show 177 -->
+
+			   <br/>
+			   					<img src="http://cdn.urbytus.net/images/admin_icon.png" style="float:left; margin-left:5px; margin-right:10px;"/>
+						<b>Community Administrator</b>
+			</br>
+			Admin Fincas<br/>
+									<br/>
+			   </div>
+			   </div>
+				<!--  END Of Community Administrator Box -->				<!--  END Of Community Administrator Box -->		   		   
+			   		   
+				
+			    <!-- Advertising above the BizXense -->
+					
+										
+									<!-- bizxense finder -->
+				
+									
+				
+					<div class="box">
+					<h4 class="roundedlight-blue"  style="background-color:#F2652A">Business Directory</h4>
+					<div class="box-container" id="directory_module_off" >
+					<form method="get" action="http://www.bizxense.com/directory_result.php" target="_blank">
+					<input type="text" style="width:187px; padding:5px;" name="search" />
+					<input type='hidden' name='portalId' value='77'>
+					<input type='hidden' name='sessionLanguage' value='EN'>
+					<input type="submit" class="fb_button fb_fr" id="directory_button" value="Search" />
+					<br clear="all" />
+					</form>  
+					</div>
+					</div>
+								<!-- end of bizxense finder -->
+				
+	 
+		<!--BEGIN--- SPONSORS SECTION on OCM PUBLIC PAGE  -->
+
+			
+	    <!------   Begin Sponsor Module   -------->
+			  
+	          	          <div class="box">  	
+			  	<h4 class="roundedlight-blue" id="servBox">Sponsors</h4>
+	            <div class="box-container">
+	          		  <div id="to-do-list" style="margin-left:-4px;">
+	                 <a href="http://repisolucena.edicypages.com" target="_blank" title="RepisoLucena">				<img src="adPictureShow.php?file=65070.gif" width="210" alt="RepisoLucena">
+                </a><hr style="border: 0;height: 1px;color: #ccc;background-color: #ccc; margin: 10px 0;" />	                 </div>
+	            </div>
+	             <div class="clearFix">&nbsp;</div> 
+	          </div>    
+	          
+	          		  
+			    
+			  <!--  End Sponsor Module -->
+
+			  
+			  
+			  <!--  Begin Google Ads on Free Versions -->
+			  
+			  			  
+			  <!--  End Google Ads on Free versions -->
+			  
+
+	<!-- END OF --- SPONSORS SECTION on OCM PUBLIC PAGE  --> 
+      </div><!-- end of div#right-column -->  
+      
+    	<div id="left-col-page">
+ 		
+		
+      	<div class="box">
+        	<h4 class="roundedlight-blue" id="menuTitleBox">
+            	<div id="moduleLoader">
+				
+                </div>
+            </h4>   
+            <div class="box-container" id="contentloader">
+
+			
+<script type="text/javascript">
+var moduleTitle = document.createElement("span");  
+document.getElementById('moduleLoader').innerHTML = "Las Delicias";
+</script> 
+
+<style>
+  .fotorama:not(.fotorama--fullscreen) .fotorama__fullscreen-icon {
+    width: 70% !important;
+    height: 100% !important;
+
+    top: 0;
+    left: 50px;
+
+    background-image: none !important;
+
+    display: block !important;
+    opacity: 1 !important;
+    -webkit-transform: translate3d(0, 0, 0) !important;
+    -ms-transform: translate3d(0, 0, 0) !important;
+    transform: translate3d(0, 0, 0) !important;
+  }
+</style>
+
+<script src='/js/fotorama.js'></script>
+<link rel="stylesheet" href="/css/fotorama.css">
+
+<body>
+<div style="width:330px; float:left;display:inline-block" >
+  <div class='fotorama' data-width='100%' data-ratio="800/600" data-maxheight='250' data-autoplay='true' data-keyboard='true' data-loop='true' data-stopautoplayontouch="false" data-nav='false'  data-allowfullscreen='native' >
+                  <img src="/comPictureShow.php?file=comImages/77/6793d.jpg" />
+              <img src="/comPictureShow.php?file=comImages/77/6e053.jpg" />
+              <img src="/comPictureShow.php?file=comImages/77/a8b98.jpg" />
+              <img src="/comPictureShow.php?file=comImages/77/1c738.jpg" />
+        </div>
+</div> 
+      
+      
+<div style="float:left; width:370px; height:145px; margin-left:10px; overflow:hidden; display:inline-block;font-size: 11px;">
+  <b class="box_titles">Las Delicias</b><br><br>
+  Las Delicias is an urbanization of 125 villas and 72 town houses.  It was established 1992 and there are only a few plots left for sale.  The main entrance is on the MA3303 half way between Alhaurin Golf and Coin.</div>
+<div style="float:left; width:360px; margin-left:15px; display:inline-block;text-align:right; margin-top:15px;font-size: 11px;">
+<a href="#" onClick="example_ajax_request('about/about.php&mId=2&grpmId=1');" class="linkInside" >Read More</a>
+</div>
+<div style="clear:both;"></div>
+
+
+        </div>
+        </div> 
+
+		
+</div>
+       
+      	
+                 <div id="left-col">
+
+							<!-- BOF: community news module ------------------------------------------------------------------>
+
+				<div class="box">
+					<h4 class="roundedlight-blue" id="latestNewsTitleBox">COMMUNITY NEWS</h4>
+					<div class="box-container">
+						<div id="sys-messages-container" style="height: 121px;overflow: hidden;">
+							<script type="text/javascript">
+var moduleTitle = document.createElement("span");  
+document.getElementById('moduleLoader').innerHTML = "News";
+</script> 
+    
+
+
+<link rel="stylesheet" href="styles/modal-message.css" type="text/css">
+<script  type="text/javascript">
+
+/*
+	Slimbox v2.02 - The ultimate lightweight Lightbox clone for jQuery
+	(c) 2007-2009 Christophe Beyls <http://www.digitalia.be>
+	MIT-style license.
+*/
+(function(w){var E=w(window),u,g,F=-1,o,x,D,v,y,L,s,n=!window.XMLHttpRequest,e=window.opera&&(document.compatMode=="CSS1Compat")&&(w.browser.version>=9.3),m=document.documentElement,l={},t=new Image(),J=new Image(),H,a,h,q,I,d,G,c,A,K;w(function(){w("body").append(w([H=w('<div id="lbOverlay" />')[0],a=w('<div id="lbCenter" />')[0],G=w('<div id="lbBottomContainer" />')[0]]).css("display","none"));h=w('<div id="lbImage" />').appendTo(a).append(q=w('<div style="position: relative;" />').append([I=w('<a id="lbPrevLink" href="#" />').click(B)[0],d=w('<a id="lbNextLink" href="#" />').click(f)[0]])[0])[0];c=w('<div id="lbBottom" />').appendTo(G).append([w('<a id="lbCloseLink" href="#" />').add(H).click(C)[0],A=w('<div id="lbCaption" />')[0],K=w('<div id="lbNumber" />')[0],w('<div style="clear: both;" />')[0]])[0]});w.slimbox=function(O,N,M){u=w.extend({loop:false,overlayOpacity:0.8,overlayFadeDuration:400,resizeDuration:400,resizeEasing:"swing",initialWidth:250,initialHeight:250,imageFadeDuration:400,captionAnimationDuration:400,counterText:"Image {x} of {y}",closeKeys:[27,88,67],previousKeys:[37,80],nextKeys:[39,78]},M);if(typeof O=="string"){O=[[O,N]];N=0}y=E.scrollTop()+((e?m.clientHeight:E.height())/2);L=u.initialWidth;s=u.initialHeight;w(a).css({top:Math.max(0,y-(s/2)),width:L,height:s,marginLeft:-L/2}).show();v=n||(H.currentStyle&&(H.currentStyle.position!="fixed"));if(v){H.style.position="absolute"}w(H).css("opacity",u.overlayOpacity).fadeIn(u.overlayFadeDuration);z();k(1);g=O;u.loop=u.loop&&(g.length>1);return b(N)};w.fn.slimbox=function(M,P,O){P=P||function(Q){return[Q.href,Q.title]};O=O||function(){return true};var N=this;return N.unbind("click").click(function(){var S=this,U=0,T,Q=0,R;T=w.grep(N,function(W,V){return O.call(S,W,V)});for(R=T.length;Q<R;++Q){if(T[Q]==S){U=Q}T[Q]=P(T[Q],Q)}return w.slimbox(T,U,M)})};function z(){var N=E.scrollLeft(),M=e?m.clientWidth:E.width();w([a,G]).css("left",N+(M/2));if(v){w(H).css({left:N,top:E.scrollTop(),width:M,height:E.height()})}}function k(M){w("object").add(n?"select":"embed").each(function(O,P){if(M){w.data(P,"slimbox",P.style.visibility)}P.style.visibility=M?"hidden":w.data(P,"slimbox")});var N=M?"bind":"unbind";E[N]("scroll resize",z);w(document)[N]("keydown",p)}function p(O){var N=O.keyCode,M=w.inArray;return(M(N,u.closeKeys)>=0)?C():(M(N,u.nextKeys)>=0)?f():(M(N,u.previousKeys)>=0)?B():false}function B(){return b(x)}function f(){return b(D)}function b(M){if(M>=0){F=M;o=g[F][0];x=(F||(u.loop?g.length:0))-1;D=((F+1)%g.length)||(u.loop?0:-1);r();a.className="lbLoading";l=new Image();l.onload=j;l.src=o}return false}function j(){a.className="";w(h).css({backgroundImage:"url("+o+")",visibility:"hidden",display:""});w(q).width(l.width);w([q,I,d]).height(l.height);w(A).html(g[F][1]||"");w(K).html((((g.length>1)&&u.counterText)||"").replace(/{x}/,F+1).replace(/{y}/,g.length));if(x>=0){t.src=g[x][0]}if(D>=0){J.src=g[D][0]}L=h.offsetWidth;s=h.offsetHeight;var M=Math.max(0,y-(s/2));if(a.offsetHeight!=s){w(a).animate({height:s,top:M},u.resizeDuration,u.resizeEasing)}if(a.offsetWidth!=L){w(a).animate({width:L,marginLeft:-L/2},u.resizeDuration,u.resizeEasing)}w(a).queue(function(){w(G).css({width:L,top:M+s,marginLeft:-L/2,visibility:"hidden",display:""});w(h).css({display:"none",visibility:"",opacity:""}).fadeIn(u.imageFadeDuration,i)})}function i(){if(x>=0){w(I).show()}if(D>=0){w(d).show()}w(c).css("marginTop",-c.offsetHeight).animate({marginTop:0},u.captionAnimationDuration);G.style.visibility=""}function r(){l.onload=null;l.src=t.src=J.src=o;w([a,h,c]).stop(true);w([I,d,h,G]).hide()}function C(){if(F>=0){r();F=x=D=-1;w(a).hide();w(H).stop().fadeOut(u.overlayFadeDuration,k)}return false}})(jQuery);
+
+// AUTOLOAD CODE BLOCK (MAY BE CHANGED OR REMOVED)
+jQuery(function($) {
+	$("a[rel^='lightbox']").slimbox({/* Put custom options here */}, null, function(el) {
+		return (this == el) || ((this.rel.length > 8) && (this.rel == el.rel));
+	});
+});
+
+</script><style type="text/css">
+/* SLIMBOX */
+
+#lbOverlay {
+	position: fixed;
+	z-index: 9999;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #000;
+	cursor: pointer;
+}
+
+#lbCenter, #lbBottomContainer {
+	position: absolute;
+	z-index: 9999;
+	overflow: hidden;
+	background-color: #fff;
+}
+
+.lbLoading {
+	background: #fff url(http://ocm-demo.com/css/loading.gif) no-repeat center;
+}
+
+#lbImage {
+	position: absolute;
+	left: 0;
+	top: 0;
+	border: 10px solid #fff;
+	background-repeat: no-repeat;
+}
+
+#lbPrevLink, #lbNextLink {
+	display: block;
+	position: absolute;
+	top: 0;
+	width: 50%;
+	outline: none;
+	
+}
+
+#lbPrevLink {
+	left: 0;
+	background: transparent url(http://ocm-demo.com/css/prevlabel.gif) no-repeat 0 0%;
+}
+
+#lbPrevLink:hover {
+	background: transparent url(http://ocm-demo.com/css/prevlabel.gif) no-repeat 0% 0%;
+}
+
+#lbNextLink {
+	right: 0;
+	background: transparent url(http://ocm-demo.com/css/nextlabel.gif) no-repeat 100% 0%;
+}
+
+#lbNextLink:hover {
+	background: transparent url(http://ocm-demo.com/css/nextlabel.gif) no-repeat 100% 0%;
+}
+
+#lbBottom {
+	font-family: Verdana, Arial, Geneva, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #666;
+	line-height: 1.4em;
+	text-align: left;
+	border: 10px solid #fff;
+	border-top-style: none;
+}
+
+#lbCloseLink {
+	display: block;
+	float: right;
+	width: 66px;
+	height: 22px;
+	background: transparent url(http://ocm-demo.com/css/closelabel.gif) no-repeat center;
+	margin: 5px 0;
+	outline: none;
+}
+
+#lbCaption, #lbNumber {
+	margin-right: 71px;
+}
+
+#lbCaption {
+	font-weight: bold;
+}
+</style><style type="text/css">
+/* ----------------------------------------------------------------------------------------------------------------*/
+/* ---------->>> global settings needed for thickbox <<<-----------------------------------------------------------*/
+/* ----------------------------------------------------------------------------------------------------------------*/
+*{padding: 0; margin: 0;}
+
+/* ----------------------------------------------------------------------------------------------------------------*/
+/* ---------->>> thickbox specific link and font settings <<<------------------------------------------------------*/
+/* ----------------------------------------------------------------------------------------------------------------*/
+#TB_window {
+	font: 12px Arial, Helvetica, sans-serif;
+	color: #333333;
+	width:200px;
+	height:200px;
+}
+
+#TB_secondLine {
+	font: 10px Arial, Helvetica, sans-serif;
+	color:#666666;
+}
+
+#TB_window a:link {color: #666666;}
+#TB_window a:visited {color: #666666;}
+#TB_window a:hover {color: #000;}
+#TB_window a:active {color: #666666;}
+#TB_window a:focus{color: #666666;}
+
+/* ----------------------------------------------------------------------------------------------------------------*/
+/* ---------->>> thickbox settings <<<-----------------------------------------------------------------------------*/
+/* ----------------------------------------------------------------------------------------------------------------*/
+#TB_overlay {
+	position: fixed;
+	z-index:100;
+	top: 0px;
+	left: 0px;
+	height:100%;
+	width:100%;
+}
+
+.TB_overlayMacFFBGHack {background: url(macFFBgHack.png) repeat;}
+.TB_overlayBG {
+	background-color:#000;
+	filter:alpha(opacity=75);
+	-moz-opacity: 0.75;
+	opacity: 0.75;
+}
+
+* html #TB_overlay { /* ie6 hack */
+     position: absolute;
+     height: expression(document.body.scrollHeight > document.body.offsetHeight ? document.body.scrollHeight : document.body.offsetHeight + 'px');
+}
+
+#TB_window {
+	position: fixed;
+	background: #ffffff;
+	z-index: 102;
+	color:#000000;
+	display:none;
+	border: 4px solid #525252;
+	text-align:left;
+	top:50%;
+	left:50%;
+}
+
+* html #TB_window { /* ie6 hack */
+position: absolute;
+margin-top: expression(0 - parseInt(this.offsetHeight / 2) + (TBWindowMargin = document.documentElement && document.documentElement.scrollTop || document.body.scrollTop) + 'px');
+}
+
+#TB_window img#TB_Image {
+	display:block;
+	margin: 15px 0 0 15px;
+	border-right: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	border-top: 1px solid #666;
+	border-left: 1px solid #666;
+}
+
+#TB_caption{
+	height:25px;
+	padding:7px 30px 10px 25px;
+	float:left;
+}
+
+#TB_closeWindow{
+	height:25px;
+	padding:11px 25px 10px 0;
+	float:right;
+}
+
+#TB_closeAjaxWindow{
+	padding:7px 10px 5px 0;
+	margin-bottom:1px;
+	text-align:right;
+	float:right;
+}
+
+#TB_ajaxWindowTitle{
+	float:left;
+	padding:7px 0 5px 10px;
+	margin-bottom:1px;
+}
+
+#TB_title{
+	background-color:#e8e8e8;
+	height:27px;
+}
+
+#TB_ajaxContent{
+	clear:both;
+	padding:2px 15px 15px 15px;
+	overflow:auto;
+	text-align:left;
+	line-height:1.4em;
+}
+
+#TB_ajaxContent.TB_modal{
+	padding:15px;
+}
+
+#TB_ajaxContent p{
+	padding:5px 0px 5px 0px;
+}
+
+#TB_load{
+	position: fixed;
+	display:none;
+	height:13px;
+	width:208px;
+	z-index:103;
+	top: 50%;
+	left: 50%;
+	margin: -6px 0 0 -104px; /* -height/2 0 0 -width/2 */
+}
+
+* html #TB_load { /* ie6 hack */
+position: absolute;
+margin-top: expression(0 - parseInt(this.offsetHeight / 2) + (TBWindowMargin = document.documentElement && document.documentElement.scrollTop || document.body.scrollTop) + 'px');
+}
+
+#TB_HideSelect{
+	z-index:99;
+	position:fixed;
+	top: 0;
+	left: 0;
+	background-color:#fff;
+	border:none;
+	filter:alpha(opacity=0);
+	-moz-opacity: 0;
+	opacity: 0;
+	height:100%;
+	width:100%;
+}
+
+* html #TB_HideSelect { /* ie6 hack */
+     position: absolute;
+     height: expression(document.body.scrollHeight > document.body.offsetHeight ? document.body.scrollHeight : document.body.offsetHeight + 'px');
+}
+
+#TB_iframeContent{
+	clear:both;
+	border:none;
+	margin-bottom:-1px;
+	margin-top:1px;
+	_margin-bottom:1px;
+}
+</style><script type="text/javascript">
+/*
+ * Thickbox 3 - One Box To Rule Them All.
+ * By Cody Lindley (http://www.codylindley.com)
+ * Copyright (c) 2007 cody lindley
+ * Licensed under the MIT License: http://www.opensource.org/licenses/mit-license.php
+*/
+
+var tb_pathToImage = "images/loadingAnimation.gif";
+
+eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)r[e(c)]=k[c]||e(c);k=[function(e){return r[e]}];e=function(){return'\\w+'};c=1};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p}('$(o).2S(9(){1u(\'a.18, 3n.18, 3i.18\');1w=1p 1t();1w.L=2H});9 1u(b){$(b).s(9(){6 t=X.Q||X.1v||M;6 a=X.u||X.23;6 g=X.1N||P;19(t,a,g);X.2E();H P})}9 19(d,f,g){3m{3(2t o.v.J.2i==="2g"){$("v","11").r({A:"28%",z:"28%"});$("11").r("22","2Z");3(o.1Y("1F")===M){$("v").q("<U 5=\'1F\'></U><4 5=\'B\'></4><4 5=\'8\'></4>");$("#B").s(G)}}n{3(o.1Y("B")===M){$("v").q("<4 5=\'B\'></4><4 5=\'8\'></4>");$("#B").s(G)}}3(1K()){$("#B").1J("2B")}n{$("#B").1J("2z")}3(d===M){d=""}$("v").q("<4 5=\'K\'><1I L=\'"+1w.L+"\' /></4>");$(\'#K\').2y();6 h;3(f.O("?")!==-1){h=f.3l(0,f.O("?"))}n{h=f}6 i=/\\.2s$|\\.2q$|\\.2m$|\\.2l$|\\.2k$/;6 j=h.1C().2h(i);3(j==\'.2s\'||j==\'.2q\'||j==\'.2m\'||j==\'.2l\'||j==\'.2k\'){1D="";1G="";14="";1z="";1x="";R="";1n="";1r=P;3(g){E=$("a[@1N="+g+"]").36();25(D=0;((D<E.1c)&&(R===""));D++){6 k=E[D].u.1C().2h(i);3(!(E[D].u==f)){3(1r){1z=E[D].Q;1x=E[D].u;R="<1e 5=\'1X\'>&1d;&1d;<a u=\'#\'>2T &2R;</a></1e>"}n{1D=E[D].Q;1G=E[D].u;14="<1e 5=\'1U\'>&1d;&1d;<a u=\'#\'>&2O; 2N</a></1e>"}}n{1r=1b;1n="1t "+(D+1)+" 2L "+(E.1c)}}}S=1p 1t();S.1g=9(){S.1g=M;6 a=2x();6 x=a[0]-1M;6 y=a[1]-1M;6 b=S.z;6 c=S.A;3(b>x){c=c*(x/b);b=x;3(c>y){b=b*(y/c);c=y}}n 3(c>y){b=b*(y/c);c=y;3(b>x){c=c*(x/b);b=x}}13=b+30;1a=c+2G;$("#8").q("<a u=\'\' 5=\'1L\' Q=\'1o\'><1I 5=\'2F\' L=\'"+f+"\' z=\'"+b+"\' A=\'"+c+"\' 23=\'"+d+"\'/></a>"+"<4 5=\'2D\'>"+d+"<4 5=\'2C\'>"+1n+14+R+"</4></4><4 5=\'2A\'><a u=\'#\' 5=\'Z\' Q=\'1o\'>1l</a> 1k 1j 1s</4>");$("#Z").s(G);3(!(14==="")){9 12(){3($(o).N("s",12)){$(o).N("s",12)}$("#8").C();$("v").q("<4 5=\'8\'></4>");19(1D,1G,g);H P}$("#1U").s(12)}3(!(R==="")){9 1i(){$("#8").C();$("v").q("<4 5=\'8\'></4>");19(1z,1x,g);H P}$("#1X").s(1i)}o.1h=9(e){3(e==M){I=2w.2v}n{I=e.2u}3(I==27){G()}n 3(I==3k){3(!(R=="")){o.1h="";1i()}}n 3(I==3j){3(!(14=="")){o.1h="";12()}}};16();$("#K").C();$("#1L").s(G);$("#8").r({Y:"T"})};S.L=f}n{6 l=f.2r(/^[^\\?]+\\??/,\'\');6 m=2p(l);13=(m[\'z\']*1)+30||3h;1a=(m[\'A\']*1)+3g||3f;W=13-30;V=1a-3e;3(f.O(\'2j\')!=-1){1E=f.1B(\'3d\');$("#15").C();3(m[\'1A\']!="1b"){$("#8").q("<4 5=\'2f\'><4 5=\'1H\'>"+d+"</4><4 5=\'2e\'><a u=\'#\' 5=\'Z\' Q=\'1o\'>1l</a> 1k 1j 1s</4></4><U 1W=\'0\' 2d=\'0\' L=\'"+1E[0]+"\' 5=\'15\' 1v=\'15"+1f.2c(1f.1y()*2b)+"\' 1g=\'1m()\' J=\'z:"+(W+29)+"p;A:"+(V+17)+"p;\' > </U>")}n{$("#B").N();$("#8").q("<U 1W=\'0\' 2d=\'0\' L=\'"+1E[0]+"\' 5=\'15\' 1v=\'15"+1f.2c(1f.1y()*2b)+"\' 1g=\'1m()\' J=\'z:"+(W+29)+"p;A:"+(V+17)+"p;\'> </U>")}}n{3($("#8").r("Y")!="T"){3(m[\'1A\']!="1b"){$("#8").q("<4 5=\'2f\'><4 5=\'1H\'>"+d+"</4><4 5=\'2e\'><a u=\'#\' 5=\'Z\'>1l</a> 1k 1j 1s</4></4><4 5=\'F\' J=\'z:"+W+"p;A:"+V+"p\'></4>")}n{$("#B").N();$("#8").q("<4 5=\'F\' 3c=\'3b\' J=\'z:"+W+"p;A:"+V+"p;\'></4>")}}n{$("#F")[0].J.z=W+"p";$("#F")[0].J.A=V+"p";$("#F")[0].3a=0;$("#1H").11(d)}}$("#Z").s(G);3(f.O(\'37\')!=-1){$("#F").q($(\'#\'+m[\'26\']).1T());$("#8").24(9(){$(\'#\'+m[\'26\']).q($("#F").1T())});16();$("#K").C();$("#8").r({Y:"T"})}n 3(f.O(\'2j\')!=-1){16();3($.1q.35){$("#K").C();$("#8").r({Y:"T"})}}n{$("#F").34(f+="&1y="+(1p 33().32()),9(){16();$("#K").C();1u("#F a.18");$("#8").r({Y:"T"})})}}3(!m[\'1A\']){o.21=9(e){3(e==M){I=2w.2v}n{I=e.2u}3(I==27){G()}}}}31(e){}}9 1m(){$("#K").C();$("#8").r({Y:"T"})}9 G(){$("#2Y").N("s");$("#Z").N("s");$("#8").2X("2W",9(){$(\'#8,#B,#1F\').2V("24").N().C()});$("#K").C();3(2t o.v.J.2i=="2g"){$("v","11").r({A:"1Z",z:"1Z"});$("11").r("22","")}o.1h="";o.21="";H P}9 16(){$("#8").r({2U:\'-\'+20((13/2),10)+\'p\',z:13+\'p\'});3(!(1V.1q.2Q&&1V.1q.2P<7)){$("#8").r({38:\'-\'+20((1a/2),10)+\'p\'})}}9 2p(a){6 b={};3(!a){H b}6 c=a.1B(/[;&]/);25(6 i=0;i<c.1c;i++){6 d=c[i].1B(\'=\');3(!d||d.1c!=2){39}6 e=2a(d[0]);6 f=2a(d[1]);f=f.2r(/\\+/g,\' \');b[e]=f}H b}9 2x(){6 a=o.2M;6 w=1S.2o||1R.2o||(a&&a.1Q)||o.v.1Q;6 h=1S.1P||1R.1P||(a&&a.2n)||o.v.2n;1O=[w,h];H 1O}9 1K(){6 a=2K.2J.1C();3(a.O(\'2I\')!=-1&&a.O(\'3o\')!=-1){H 1b}}',62,211,'|||if|div|id|var||TB_window|function||||||||||||||else|document|px|append|css|click||href|body||||width|height|TB_overlay|remove|TB_Counter|TB_TempArray|TB_ajaxContent|tb_remove|return|keycode|style|TB_load|src|null|unbind|indexOf|false|title|TB_NextHTML|imgPreloader|block|iframe|ajaxContentH|ajaxContentW|this|display|TB_closeWindowButton||html|goPrev|TB_WIDTH|TB_PrevHTML|TB_iframeContent|tb_position||thickbox|tb_show|TB_HEIGHT|true|length|nbsp|span|Math|onload|onkeydown|goNext|Esc|or|close|tb_showIframe|TB_imageCount|Close|new|browser|TB_FoundURL|Key|Image|tb_init|name|imgLoader|TB_NextURL|random|TB_NextCaption|modal|split|toLowerCase|TB_PrevCaption|urlNoQuery|TB_HideSelect|TB_PrevURL|TB_ajaxWindowTitle|img|addClass|tb_detectMacXFF|TB_ImageOff|150|rel|arrayPageSize|innerHeight|clientWidth|self|window|children|TB_prev|jQuery|frameborder|TB_next|getElementById|auto|parseInt|onkeyup|overflow|alt|unload|for|inlineId||100||unescape|1000|round|hspace|TB_closeAjaxWindow|TB_title|undefined|match|maxHeight|TB_iframe|bmp|gif|png|clientHeight|innerWidth|tb_parseQuery|jpeg|replace|jpg|typeof|which|keyCode|event|tb_getPageSize|show|TB_overlayBG|TB_closeWindow|TB_overlayMacFFBGHack|TB_secondLine|TB_caption|blur|TB_Image|60|tb_pathToImage|mac|userAgent|navigator|of|documentElement|Prev|lt|version|msie|gt|ready|Next|marginLeft|trigger|fast|fadeOut|TB_imageOff|hidden||catch|getTime|Date|load|safari|get|TB_inline|marginTop|continue|scrollTop|TB_modal|class|TB_|45|440|40|630|input|188|190|substr|try|area|firefox'.split('|'),0,{}))
+</script>
+
+<div id="editbtn" align="right" class="editlink">
+  
+</div>
+
+
+
+<style>
+	.newsListItem {
+		padding: 5px;
+		color: #333;
+		cursor: pointer;
+		border-bottom: 1px solid #ccc;
+	}
+	.newsListItem b {
+		display: block;
+		margin-bottom: 5px;
+		color: #000;
+	}
+	.newsListItem p {
+		font-size: 11px;
+	}
+	.newsListItem:hover {
+		color: #000;
+		background: #eee;
+	}
+</style>
+
+
+
+<div id="sys-messages-container">
+
+  
+ <div class="newsListItem" onclick="example_ajax_request('newsDetails.php&newsId=35198');">
+ <b>Noise regulations</b>
+<p>
+The following local authority regulations regarding noise apply in Las Delicias.<br />
+<br />
+Gardening work from 8:00 am to 8:00 pm Monday to Friday.  On Saturdays it is from 8:00 to 15:00 and public holidays from 10:00 am to 15:00.  Su ..
+</p>
+<br clear="all" />
+</div>
+
+
+ 
+ <div class="newsListItem" onclick="example_ajax_request('newsDetails.php&newsId=34050');">
+ <b>Foreign non residents, propert tax</b>
+<p>
+The Spanish Tax Authority is now taking unpaid taxes direct from bank accounts.  In 2011 they started with some Warning Letters, The tax authorities sent 300.000 letters to non resident property owners, informing them that th ..
+</p>
+<br clear="all" />
+</div>
+
+
+ 
+ 
+ 
+                
+
+
+</div>
+
+
+
+						</div>
+					</div><!-- end of div.box-container -->
+				</div> <!-- end of div#left-col -->
+							<!-- EOF: ------------------------local news module --------------------------------------- -->
+						<!-- BOF: local news module ------------------------------------------------------------------>
+			<div class="box" >
+				<h4 class="roundedlight-blue" id="latestNewsTitleBox">Local News</h4>
+				<div class="box-container">
+					<div id="sys-messages-container" style="height: 120px;overflow: hidden;">
+						<script type="text/javascript">
+var moduleTitle = document.createElement("span");  
+document.getElementById('moduleLoader').innerHTML = "News";
+</script> 
+    
+
+
+<link rel="stylesheet" href="styles/modal-message.css" type="text/css">
+
+
+<div id="editbtn" align="right" class="editlink">
+  
+</div>
+
+
+
+<style>
+	.newsListItem {
+		padding: 5px;
+		color: #333;
+		cursor: pointer;
+		border-bottom: 1px solid #ccc;
+	}
+	.newsListItem b {
+		display: block;
+		margin-bottom: 5px;
+		color: #000;
+	}
+	.newsListItem p {
+		font-size: 11px;
+	}
+	.newsListItem:hover {
+		color: #000;
+		background: #eee;
+	}
+</style>
+
+
+
+<div id="sys-messages-container">
+
+  
+ <div class="newsListItem" onclick="example_ajax_request('newsDetails.php&newsId=0');">
+ <b>Typically Spanish - <a href="http://www.typicallyspanish.com/news-spain/malaga/The_odyssey_of_a_woman_trying_to_prove_she_is_alive_in_M_laga.shtml">The odyssey of a woman trying to prove she is alive in Málaga</a></b>
+<p>
+Juana Escudero was declared dead in 2010 and even a tomb in Málaga bears her name ..
+</p>
+<br clear="all" />
+</div>
+
+
+ 
+ <div class="newsListItem" onclick="example_ajax_request('newsDetails.php&newsId=-1');">
+ <b>Typically Spanish - <a href="http://www.typicallyspanish.com/news-spain/brief/Spain_Business_Brief_-_Wednesday_May_24_2017.shtml">Spain Business Brief - Wednesday May 24, 2017</a></b>
+<p>
+The founder of Amazon has donated a million dollars to support press freedom. ..
+</p>
+<br clear="all" />
+</div>
+
+
+ 
+ <div class="newsListItem" onclick="example_ajax_request('newsDetails.php&newsId=-2');">
+ <b>Typically Spanish - <a href="http://www.typicallyspanish.com/news-spain/history/Spain_On_This_Day_-_May_29.shtml">Spain On This Day - May 29</a></b>
+<p>
+Saints Day: Teodosia, Maximino, Eleuterio and Alejandro ..
+</p>
+<br clear="all" />
+</div>
+
+
+ 
+ <div class="newsListItem" onclick="example_ajax_request('newsDetails.php&newsId=-3');">
+ <b>Expatica - <a href="http://www.expatica.com/es/news/Spain-economy-jobs-demo_1112525.html">Tens of thousands rally in Madrid for 'job dignity'</a></b>
+<p>
+Tens of thousands of people rallied in Madrid on Saturday for a "march of dignity" to demand better wages and job security as Spain's economy improves.Demonstrators from all over the country marched down... ..
+</p>
+<br clear="all" />
+</div>
+
+
+ 
+ <div class="newsListItem" onclick="example_ajax_request('newsDetails.php&newsId=-4');">
+ <b>Typically Spanish - <a href="http://www.typicallyspanish.com/news-spain/papers/Spain_Papers_Review_-_Sunday_May_28_2017.shtml">Spain Papers Review - Sunday May 28, 2017</a></b>
+<p>
+Cataluña dominates with the G-7 summit and the increasing numbers of drunk and drugged drivers. ..
+</p>
+<br clear="all" />
+</div>
+
+
+ 
+ <div class="newsListItem" onclick="example_ajax_request('newsDetails.php&newsId=-5');">
+ <b>SURinEnglish - <a href="http://www.surinenglish.com/20141022/news/spain/unfortunately-close-edge-third-201410221146.html?utm_source=www.surinenglish.com&utm_medium=rss&utm_content=spain-rss&utm_campaign=traffic-rss">"Unfortunately the EU is close to the edge of a third recession"</a></b>
+<p>
+Joaquín Almunia, Vice-president of the European Commission ..
+</p>
+<br clear="all" />
+</div>
+
+
+ 
+ <div class="newsListItem" onclick="example_ajax_request('newsDetails.php&newsId=-6');">
+ <b>Typically Spanish - <a href="http://www.typicallyspanish.com/news-spain/history/Spain_On_This_Day_-_May_28.shtml">Spain On This Day - May 28</a></b>
+<p>
+Saints Day: Justo, Germán, Podio, Félix, Emilio, Eladio and Luciano ..
+</p>
+<br clear="all" />
+</div>
+
+
+ 
+ <div class="newsListItem" onclick="example_ajax_request('newsDetails.php&newsId=-7');">
+ <b>Typically Spanish - <a href="http://www.typicallyspanish.com/news-spain/papers/Spain_Papers_Review_-_Monday_May_29_2017.shtml">Spain Papers Review - Monday May 29, 2017</a></b>
+<p>
+‘Puigdemont has given in to his partners and will bring forward his announcement of his consultation’ ..
+</p>
+<br clear="all" />
+</div>
+
+
+ 
+ <div class="newsListItem" onclick="example_ajax_request('newsDetails.php&newsId=-8');">
+ <b>Typically Spanish - <a href="http://www.typicallyspanish.com/news-spain/history/Spain_On_This_Day_-_May_27.shtml">Spain On This Day - May 27</a></b>
+<p>
+Saints Day: Agustín de Cantorbery, Julio and Restituta ..
+</p>
+<br clear="all" />
+</div>
+
+
+ 
+ <div class="newsListItem" onclick="example_ajax_request('newsDetails.php&newsId=-9');">
+ <b>Typically Spanish - <a href="http://www.typicallyspanish.com/news-spain/mallorca/Requested_74_years_in_jail_for_13_accused_of_drug_trafficking.shtml">Requested 74 years in jail for 13 accused of drug trafficking </a></b>
+<p>
+The gang was dedicated bring into Mallorca cocaine, ecstasy and marihuana and then to distribute the drugs on the island – two processed obtained 800,000 € in three years. ..
+</p>
+<br clear="all" />
+</div>
+
+
+ 
+ <div class="newsListItem" onclick="example_ajax_request('newsDetails.php&newsId=-10');">
+ <b>Expatica - <a href="http://www.expatica.com/es/news/hacking-toys-can-be-weapons_1106486.html">Cyber kid stuns experts showing toys can be 'weapons'</a></b>
+<p>
+An 11-year-old 'cyber ninja' stunned security experts by hacking into their bluetooth devices to manipulate a teddy bear and show how interconnected smart toys 'can be weaponised'. ..
+</p>
+<br clear="all" />
+</div>
+
+
+ 
+ <div class="newsListItem" onclick="example_ajax_request('newsDetails.php&newsId=-11');">
+ <b>Expatica - <a href="http://www.expatica.com/es/news/OP-Ex-SAS-trained-security-guards-sent-to-Spain-to-protect-tourists-from-ISIS-terror-attacks_1113856.html">Ex SAS-trained security guards sent to Spain to protect tourists from ISIS terror attacks</a></b>
+<p>
+Tour operators dispatch 100 former soldiers after threat to mainland Spain, Balearic Islands and Canary Islands ..
+</p>
+<br clear="all" />
+</div>
+
+
+ 
+ <div class="newsListItem" onclick="example_ajax_request('newsDetails.php&newsId=-12');">
+ <b>Typically Spanish - <a href="http://www.typicallyspanish.com/news-spain/">Typically Spanish</a></b>
+<p>
+The latest national and local news from Spain ..
+</p>
+<br clear="all" />
+</div>
+
+
+ 
+ <div class="newsListItem" onclick="example_ajax_request('newsDetails.php&newsId=-13');">
+ <b>Expatica - <a href="http://www.expatica.com/es/news/Spain-NZealand-RugbyU-award-NZL_1108183.html">RugbyU: All Blacks awarded Spain's top sports prize</a></b>
+<p>
+New Zealand's legendary All Blacks were awarded Spain's top sports prize Wednesday for being "an example of racial and cultural integration".The team famed for performing the haka war dance derived from... ..
+</p>
+<br clear="all" />
+</div>
+
+
+ 
+ <div class="newsListItem" onclick="example_ajax_request('newsDetails.php&newsId=-14');">
+ <b>Typically Spanish - <a href="http://www.typicallyspanish.com/news-spain/sol/Four_detained_after_a_violent_bag_snatch_on_a_67_year_old_woman_in_Alhaur_n.shtml">Four detained after a violent bag snatch on a 67 year old woman in Alhaurín</a></b>
+<p>
+The victim has just extracted 2,890 € from a bank and suffered multiple injuries as the bag was snatched from her ..
+</p>
+<br clear="all" />
+</div>
+
+
+ 
+ <div class="newsListItem" onclick="example_ajax_request('newsDetails.php&newsId=-15');">
+ <b>Expatica - <a href="http://www.expatica.com/es/news/Britain-attack-Spain-EU_1106415.html">Spain urges EU to boost intelligence sharing to prevent attacks</a></b>
+<p>
+EU member states must boost intelligence sharing to prevent attacks like the one in Manchester which killed 22 people, including children, Spain's foreign minister said Tuesday."We have to work together... ..
+</p>
+<br clear="all" />
+</div>
+
+
+ 
+ <div class="newsListItem" onclick="example_ajax_request('newsDetails.php&newsId=-16');">
+ <b>Typically Spanish - <a href="http://www.typicallyspanish.com/news-spain/bf/82_of_the_British_Chamber_of_Commerce_in_Spain_are_worried_about_a_hard_Brexit.shtml">82% of the British Chamber of Commerce in Spain are worried about a ‘hard Brexit’</a></b>
+<p>
+82% of the companies in the British Chamber of Commerce in Spain are worried about a ‘hard Brexit’ and 42% negatively value a ‘a soft exit’ from the EU, although more than half think it will have no or positive effect ..
+</p>
+<br clear="all" />
+</div>
+
+
+ 
+ <div class="newsListItem" onclick="example_ajax_request('newsDetails.php&newsId=-17');">
+ <b>Typically Spanish - <a href="http://www.typicallyspanish.com/news-spain/history/Spain_On_This_Day_-_May_25.shtml">Spain On This Day - May 25</a></b>
+<p>
+Saints Day:  Gragorio, Urbano, Beda el Venerable, María Magdalena, Nuestra Señora del Puy ..
+</p>
+<br clear="all" />
+</div>
+
+
+ 
+ <div class="newsListItem" onclick="example_ajax_request('newsDetails.php&newsId=-18');">
+ <b>Typically Spanish - <a href="http://www.typicallyspanish.com/news-spain/papers/Spain_Papers_Review_-_Friday_May_26_2017.shtml">Spain Papers Review - Friday May 26, 2017</a></b>
+<p>
+A photo of Mariano Rajoy shaking hands with Donald Trump in Brussels dominates the front pages today ..
+</p>
+<br clear="all" />
+</div>
+
+
+ 
+ <div class="newsListItem" onclick="example_ajax_request('newsDetails.php&newsId=-19');">
+ <b>Typically Spanish - <a href="http://www.typicallyspanish.com/news-spain/national/Rosal_a_Iglesias_wife_of_B_rcenas_is_absent_in_the_G_rtel_hearing_claiming_dizziness.shtml">Rosalía Iglesias, wife of Bárcenas, is absent in the Gürtel hearing claiming dizziness</a></b>
+<p>
+She claims the dizziness comes from a pain her back and had been called to testify on the accused bench today with her husband yesterday ..
+</p>
+<br clear="all" />
+</div>
+
+
+ 
+ <div class="newsListItem" onclick="example_ajax_request('newsDetails.php&newsId=-20');">
+ <b>Typically Spanish - <a href="http://www.typicallyspanish.com/news-spain/history/Spain_On_This_Day_-_May_26.shtml">Spain On This Day - May 26</a></b>
+<p>
+Saints Day: Felipe Neri, Eleuterio, Paulino and Prisco ..
+</p>
+<br clear="all" />
+</div>
+
+
+ 
+ <div class="newsListItem" onclick="example_ajax_request('newsDetails.php&newsId=-21');">
+ <b>SURinEnglish - <a href="http://www.surinenglish.com/20141022/news/costasol-malaga/marbella-gave-idea-book-201410221152.html?utm_source=www.surinenglish.com&utm_medium=rss&utm_content=malaga-rss&utm_campaign=traffic-rss">"Marbella gave me the idea for the book"</a></b>
+<p>
+English lawyer Nigel James talks to SUR in English about his latest crime thriller The Marbella Project ..
+</p>
+<br clear="all" />
+</div>
+
+
+ 
+ <div class="newsListItem" onclick="example_ajax_request('newsDetails.php&newsId=-22');">
+ <b>Typically Spanish - <a href="http://www.typicallyspanish.com/news-spain/brief/Spain_Business_Brief_-_Thursday_May_25_2017.shtml">Spain Business Brief - Thursday May 25, 2017</a></b>
+<p>
+Places in tourism flats have surpassed hotel places for the first time, Catalan businessmen have called on Puigdemont to explain himself in Congress and Renfe has had to double its internet space to attend to the avalanche of ..
+</p>
+<br clear="all" />
+</div>
+
+
+ 
+ <div class="newsListItem" onclick="example_ajax_request('newsDetails.php&newsId=-23');">
+ <b>Expatica - <a href="http://www.expatica.com">Expatica news</a></b>
+<p>
+Spanish news ..
+</p>
+<br clear="all" />
+</div>
+
+
+ 
+ <div class="newsListItem" onclick="example_ajax_request('newsDetails.php&newsId=-24');">
+ <b>Typically Spanish - <a href="http://www.typicallyspanish.com/news-spain/calida/Captured_a_gang_of_burglars_of_80_homes_in_guilas_Lorca_and_Puerto_Lumbreras.shtml">Captured a gang of burglars of 80 homes in Águilas, Lorca and Puerto Lumbreras</a></b>
+<p>
+Three people have been arrested in Mazarrón where the Guardia Civil suspects were the base of their criminal operations. ..
+</p>
+<br clear="all" />
+</div>
+
+
+ 
+ <div class="newsListItem" onclick="example_ajax_request('newsDetails.php&newsId=-25');">
+ <b>Expatica - <a href="http://www.expatica.com/es/news/Morocco-Spain-cinema-history_1113841.html">Extraordinary life of explorer Ali Bey set for cinema</a></b>
+<p>
+Adventurer, Orientalist, spy: the remarkable story of Spanish explorer Ali Bey al-Abbassi is to be told on the silver screen for the first time, two centuries after his death.Born in Catalonia in 1767,... ..
+</p>
+<br clear="all" />
+</div>
+
+
+ 
+ <div class="newsListItem" onclick="example_ajax_request('newsDetails.php&newsId=-26');">
+ <b>Typically Spanish - <a href="http://www.typicallyspanish.com/news-spain/andalucia/The_youngster_who_died_from_a_gunshot_in_Ja_n_was_condemned_in_2001_for_assassination.shtml">The youngster who died from a gunshot in Jaén was condemned in 2001 for assassination</a></b>
+<p>
+21 year old Alberto Magallaes, was shot in the head when entering his home after 6am this morning ..
+</p>
+<br clear="all" />
+</div>
+
+
+ 
+ <div class="newsListItem" onclick="example_ajax_request('newsDetails.php&newsId=-27');">
+ <b>Expatica - <a href="http://www.expatica.com/es/news/India-economy-diplomacy-France-Germany-Russia-Spain_1109414.html">New business and old ties on agenda as Modi tours Europe</a></b>
+<p>
+Indian Prime Minister Narendra Modi will depart Monday for a four-nation tour of Europe that will include strategic talks with historic ally Russia and with key trading partner Germany.Modi will first... ..
+</p>
+<br clear="all" />
+</div>
+
+
+ 
+ <div class="newsListItem" onclick="example_ajax_request('newsDetails.php&newsId=-28');">
+ <b>Typically Spanish - <a href="http://www.typicallyspanish.com/news-spain/sol/Prison_for_a_suspect_who_may_have_assassinated_using_an_armoured_bullet_in_Marbella.shtml">Prison for a suspect who may have assassinated using an armoured bullet in Marbella</a></b>
+<p>
+Police arrested another man, now released with charges, for the killing of a moped rider last March who was shot in the head ..
+</p>
+<br clear="all" />
+</div>
+
+
+ 
+ <div class="newsListItem" onclick="example_ajax_request('newsDetails.php&newsId=-29');">
+ <b>Expatica - <a href="http://www.expatica.com/es/news/OP-Spains-leaders-react-to-Manchester-terror-attack-which-has-left-at-least-22-dead_1108148.html">Spain’s leaders react to Manchester terror attack which has left at least 22 dead</a></b>
+<p>
+The attack happened during an Ariana Grande concert. ..
+</p>
+<br clear="all" />
+</div>
+
+
+ 
+ <div class="newsListItem" onclick="example_ajax_request('newsDetails.php&newsId=-30');">
+ <b>Typically Spanish - <a href="http://www.typicallyspanish.com/news-spain/calida/The_attempted_suicide_of_two_12_year_old_girls_in_Murcia_is_being_investigated.shtml">The attempted suicide of two 12 year old girls in Murcia is being investigated</a></b>
+<p>
+Their computers are being analysed to ascertain they were playing ‘Blue Whale’ ..
+</p>
+<br clear="all" />
+</div>
+
+
+ 
+ <div class="newsListItem" onclick="example_ajax_request('newsDetails.php&newsId=-31');">
+ <b>Expatica - <a href="http://www.expatica.com/es/news/AFP-Football-Zidane-gets-sacrifice-from-Galacticos-to-make-Madrid-champions_1106450.html">Football: Zidane gets sacrifice from Galacticos to make Madrid champions</a></b>
+<p>
+Zinedine Zidane's transformation of Real Madrid from crisis club to champions has been rooted not in the glamour of relying purely on 'Galactico' talent, but fostering a team spirit and never say die attitude. ..
+</p>
+<br clear="all" />
+</div>
+
+
+ 
+ <div class="newsListItem" onclick="example_ajax_request('newsDetails.php&newsId=-32');">
+ <b>Typically Spanish - <a href="http://www.typicallyspanish.com/news-spain/papers/Spain_Papers_Review_-_Thursday_May_25_2017.shtml">Spain Papers Review  - Thursday May 25, 2017</a></b>
+<p>
+El País leads ‘The Government, prepared to do everything to stop the referendum’ – La Razón has a photo of a policeman with a soldier outside the Houses of Parliament – 3,800 soldiers patrolling Great Britain ..
+</p>
+<br clear="all" />
+</div>
+
+
+ 
+ <div class="newsListItem" onclick="example_ajax_request('newsDetails.php&newsId=-33');">
+ <b>Expatica - <a href="http://www.expatica.com/es/news/OP-Lib-Dem-leader-Tim-Farron-promises-MPs-for-expats-and-accuses-Tories-of-breaking-word_1106389.html">Lib Dem leader Tim Farron promises MPs for expats and accuses Tories of ‘breaking word’</a></b>
+<p>
+Farron savages 'utter unfairness' of May denying expats vote in election. ..
+</p>
+<br clear="all" />
+</div>
+
+
+ 
+ 
+ 
+                
+
+
+</div>
+
+
+
+					</div>
+				</div><!-- end of div.box-container -->
+			</div> <!-- end of div#left-col -->
+
+			<!-- EOF: ------------------------local news module --------------------------------------- -->
+
+			
+<!-- BOF: weather module ------------------------------------------------------------------ -->
+					
+			
+		<div class="box">
+          	<h4 class="roundedlight-blue" id="weatherTitleBox">The weather</h4>
+				<div class="box-container">
+		  		            <div style="width:350px; height:200px;">
+                <object type="application/x-shockwave-flash" data="http://swf.yowindow.com/yowidget3.swf" width="350" height="200">
+                    <param name="movie" value="http://swf.yowindow.com/yowidget3.swf"/>
+                    <param name="allowfullscreen" value="true"/>
+                    <param name="wmode" value="opaque"/>
+                    <param name="bgcolor" value="#FFFFFF"/>
+                    <param name="flashvars"
+                    value="lat=36.631165&lon=-4.738517&amp;location_name=Las Delicias&amp;time_format=24&amp;unit_system=metric&amp;lang=en&amp;background=#FFFFFF&amp;copyright_bar=false"
+                />
+                    <a href="http://yowindow.com/weatherwidget.php"
+                    style="width:220px;height:150px;display: block;text-indent: -50000px;font-size: 0px;background:#DDF url(http://yowindow.com/img/logo.png) no-repeat scroll 50% 50%;"
+                    >Widget del tiempo atmosf�rico</a>
+                </object>
+            </div>
+            <div style="width: 220px; height: 15px; font-size: 14px; font-family: Arial,Helvetica,sans-serif;">
+                    <span style="float:left;"><a target="_top" href="http://yowindow.com?client=widget&amp;link=copyright" style="color: #2fa900; font-weight:bold; text-decoration:none;" title="Widget del tiempo atmosf�rico">YoWindow.com</a></span>
+                    <span style="float:right; color:#888888;"><a href="http://yr.no" style="color: #2fa900; text-decoration:none;">yr.no</a></span>
+            </div>
+
+                    	</div>
+          </div>
+		  
+<!-- ------------------EOF: weather module ----------------------------------------------- -->
+
+
+		  
+          </div><!-- end of div.box-container -->  
+          
+
+			
+          <div id="left-col">
+
+		  
+          <!-- BOF: google maps module -->
+          <div class="box">
+              <h4 class="roundedlight-blue" id="gMapTitleBox">Google Map&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GPS: 36.631165,-4.738517</h4>
+              <div class="box-container">
+				  <script type="text/javascript">
+function initialize() {
+var mapCenter = new google.maps.LatLng(36.631165,-4.738517);
+var myOptions = {
+	zoom: 13,
+	center: mapCenter,
+	mapTypeId: google.maps.MapTypeId.ROADMAP
+};
+var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+var marker1 =  new google.maps.LatLng(36.631165, -4.738517);
+var marker = new google.maps.Marker({
+	position: marker1,
+	title:"Las Delicias"
+});
+marker.setMap(map); 
+}
+
+function loadScript() {
+  var script = document.createElement("script");
+  script.type = "text/javascript";
+  script.src = "http://maps.google.com/maps/api/js?v=3.1&sensor=false&callback=initialize";
+  document.body.appendChild(script);
+}
+
+window.onload = loadScript;
+</script>
+<div  id="map_canvas" align="center" style="text-align:center; width: 350px; height:286px;border: 1px solid #eee;" ></div>
+               <span class="clearFix"></span>
+             
+          </div><!-- end of div.box --> 
+          
+      </div> <!-- end of div#left-col -->
+	  		<!-- EOF: google maps module -->
+          
+
+
+			<!-- BOF: Bazar & Property module -->
+						
+				<div class="box">
+				<h4 class="roundedlight-blue" id="propertiesTitleBox">The market place</h4>
+				<div class="box-container">
+				
+
+
+	<div class="new_header">Featured Properties</div>
+	<div class="line"></div>
+
+	<br/>
+
+	<div class="bg_strip2" style=" padding:10px 0 0 10px;">
+
+
+
+
+
+<div style="padding-right:10px; float:left;text-align: right;">	
+		
+	<a href="javascript:example_ajax_request('buysell/view.php&pid=127');"><img src="http://cdn.urbytus.net/_icons/ocm/no_image.jpg" width="100" height="75" style="padding: 1px;border: 1px solid #666;background: #fff;" /></a>
+	<div style="width:100px;  padding-top:5px; text-align:right;">		  				
+	<b>For sale</b><br /><span style="font-size: 10px;">( 450,000.00&#8364;)</span><br />	</div>
+	</div>
+		
+	
+
+
+
+
+<div style="padding-right:10px; float:left;text-align: right;">	
+		
+	<a href="javascript:example_ajax_request('buysell/view.php&pid=479');"><img src="http://urblasdelicias.com/pi_8d5e957f297893487bd98fa830fa6413_T.jpg" width="100" height="75" style="padding: 1px;border: 1px solid #666;background: #fff;" /></a>
+	<div style="width:100px;  padding-top:5px; text-align:right;">		  				
+	<b>For sale</b><br /><span style="font-size: 10px;">( 335,000.00&#8364;)</span><br />	</div>
+	</div>
+		
+	
+
+		
+	 <div style="float:left; width: 100px; margin-top:10px; padding-left:10px;"><span style="font-size: 13px;">
+	<b>Would you like to put your property in the market place?</b><br/>Login if you are an owner and you would like to list your property for renting or selling in the market place</span>
+	</div>
+	
+
+
+	<br clear="all" />
+	<br />
+	</div>
+	<br clear="all" />
+			<a href="javascript:example_ajax_request('buysell/properties.php');" class="fb_button fb_fr">View all properties</a>
+		
+	
+	<br clear="all" />
+
+
+
+	<div class="new_header">Second hand items</div>
+	<div class="line"></div>
+
+	<br/>
+
+	<div style="overflow:hidden;">
+
+	<div style="padding-left:5px;float:left;">	  				
+			<img onClick="example_ajax_request('bazaar/bazaar_details.php&numberId=396');" src="comPictureShow.php?file=bazaar/396/thumbs/f9b902fc3289af4dd08de5d1de54f68f.jpg" class="bazaarThumbSmall" style="cursor:pointer;"  />
+			<br clear="all" /><div style="width:82px; height:50px; padding-top:5px; text-align:left; overflow:hidden; font-size:11px;">Mini Fridge</div></div>		
+
+	</div>
+	<br clear="all" />
+	<a href="javascript:example_ajax_request('bazaar/bazaar.php');" class="fb_button fb_fr">View all items</a>
+
+			
+	<span class="clearFix">&nbsp;</span>				</div><!-- end of div#box-date -->
+				</div><!-- end of div.box -->
+			<!-- EOF: Bazar & Property module -->
+			
+			     </div><!-- end of div#mid-col -->
+      
+ </div>
+ 
+<br clear="all" />
+
+</div>
+
+<br clear="all" />
+
+<div class="box-round", width = "680px">
+<center>
+
+
+<table border=0>
+  <tr>
+    <td>
+    </td>
+
+    <td>
+    <center>
+        <a href="http://www.ocm-online.com" target="_blank">OCM</a> |
+        <a href="http://www.bizxense.com" target="_blank">BizXense</a> | 
+        <a href="http://www.urbytus.com" target="_blank">Urbytus Network</a> |
+        <a href="http://www.urbadmin.es" target="_blank">Urbadmin</a> |
+        <a href="TermsAndConds.php" target="_blank">Terms and conditions of use</a> |
+        <a href="mailto:support@urbytus.es" target="_blank">Urbytus Support</a> |
+        <a href="http://urbytus.com/en/join-the-presidents-club/" target="_blank">The Presidents Club</a>  
+
+        <br><br>
+        &copy; Urbytus -  Your Interactive &amp; Multilingual Community Website / La web interactiva y multilingue de su comunidad. &copy;  2007-2015 - Urbytus
+        <br />
+
+        <small>This website complies with data protection act of Spain, LOPD article 5 of organic law 15/1999, 13 of December. </small>
+        <br />  
+        <br /> 
+        <b>
+          <a href="http://clicktick.urbytus.net/redirect/alarma" target="_blank">
+            Protected by Alarma Universal. Protecting your Homes & Businesses. Alarma Universal is an official sponsor of the Urbytus Network.
+          </a>
+        </b>
+
+    </td>
+
+    <td>
+      <a href="http://www.urbytus.es" target="_blank"><img src="http://cdn.urbytus.net/images/PoweredbyUrbytusLogo.jpg"></a>
+    </td>
+
+</tr>
+
+</table border=0>
+
+<HR>
+
+<!--  SPONSORS AREA BEGIN-->
+
+</div>
+<div>
+
+
+<BR>
+
+</div>
+
+<script>
+$('.roundedlight-blue').corner("5px top");
+$('.box-container').corner("5px bottom");
+$('#new_footer .box-round').css("width","690px");
+</script>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-23525503-4']);
+  _gaq.push(['_setDomainName', 'none']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+  
+</script>
+<br clear="all" />
+
+</body>
+</html>

@@ -1,0 +1,6 @@
+PassengerEnabled On
+PassengerAppRoot /home/lyatesco/ldfees32
+
+PassengerRuby /usr/local/ruby20/bin/ruby
+PassengerLoadShellEnvVars On
+

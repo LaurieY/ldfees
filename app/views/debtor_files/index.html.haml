@@ -1,0 +1,17 @@
+%h1 Listing debtor_files
+
+%table
+  %tr
+    %th
+    %th
+    %th
+
+  - @debtor_files.each do |debtor_file|
+    %tr
+      %td= link_to 'Show', debtor_file
+      %td= link_to 'Edit', edit_debtor_file_path(debtor_file)
+      %td= link_to 'Destroy', debtor_file, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Debtor file', new_debtor_file_path

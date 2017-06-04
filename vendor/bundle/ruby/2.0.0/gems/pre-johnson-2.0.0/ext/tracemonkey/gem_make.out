@@ -1,0 +1,662 @@
+/usr/local/ruby20/bin/ruby extconf.rb 
+extconf.rb:27: warning: Insecure world writable dir /home/lyatesco/perl5 in PATH, mode 040777
+creating cache ./config.cache
+checking host system type... x86_64-unknown-linux-gnu
+checking target system type... x86_64-unknown-linux-gnu
+checking build system type... x86_64-unknown-linux-gnu
+checking for mawk... no
+checking for gawk... gawk
+checking for gcc... gcc
+checking whether the C compiler (gcc  ) works... yes
+checking whether the C compiler (gcc  ) is a cross-compiler... no
+checking whether we are using GNU C... yes
+checking whether gcc accepts -g... yes
+checking for c++... c++
+checking whether the C++ compiler (c++  ) works... yes
+checking whether the C++ compiler (c++  ) is a cross-compiler... no
+checking whether we are using GNU C++... yes
+checking whether c++ accepts -g... yes
+checking for ranlib... ranlib
+checking for as... /usr/bin/as
+checking for ar... ar
+checking for ld... ld
+checking for strip... strip
+checking for windres... no
+checking whether gcc and cc understand -c and -o together... yes
+checking how to run the C preprocessor... gcc -E
+checking how to run the C++ preprocessor... c++ -E
+checking for a BSD compatible install... /usr/bin/install -c
+checking whether ln -s works... yes
+checking for perl5... no
+checking for perl... /usr/local/bin/perl
+checking for minimum required perl version >= 5.006... 5.008008
+checking for full perl installation... yes
+checking for python... /usr/bin/python
+checking for doxygen... /usr/bin/doxygen
+checking for whoami... /usr/bin/whoami
+checking for autoconf... /usr/bin/autoconf
+checking for unzip... /usr/local/bin/unzip
+checking for zip... /usr/local/bin/zip
+checking for makedepend... /usr/bin/makedepend
+checking for xargs... /usr/bin/xargs
+checking for gmake... /usr/bin/gmake
+checking for X... libraries , headers 
+checking for dnet_ntoa in -ldnet... no
+checking for dnet_ntoa in -ldnet_stub... no
+checking for gethostbyname... yes
+checking for connect... yes
+checking for remove... yes
+checking for shmat... yes
+checking for IceConnectionNumber in -lICE... yes
+checking whether the compiler supports -Wno-invalid-offsetof... yes
+checking whether the compiler supports -Wno-variadic-macros... yes
+checking whether ld has archive extraction flags... yes
+checking that static assertion macros used in autoconf tests work... yes
+checking for 64-bit OS... yes
+checking for ANSI C header files... yes
+checking for working const... yes
+checking for mode_t... yes
+checking for off_t... yes
+checking for pid_t... yes
+checking for size_t... yes
+checking for st_blksize in struct stat... yes
+checking for siginfo_t... yes
+checking for stdint.h... yes
+checking for the size of void*... 8
+checking for the alignment of void*... 8
+checking for the size of double... 8
+checking for int16_t... yes
+checking for int32_t... yes
+checking for int64_t... yes
+checking for int64... no
+checking for uint... yes
+checking for uint_t... no
+checking for uint16_t... no
+checking for uname.domainname... yes
+checking for uname.__domainname... no
+checking for visibility(hidden) attribute... yes
+checking for visibility(default) attribute... yes
+checking for visibility pragma support... yes
+checking For gcc visibility bug with class-level attributes (GCC bug 26905)... no
+checking For x86_64 gcc visibility bug with builtins (GCC bug 20297)... no
+checking for dirent.h that defines DIR... yes
+checking for opendir in -ldir... no
+checking for sys/byteorder.h... no
+checking for compat.h... no
+checking for getopt.h... yes
+checking for sys/bitypes.h... yes
+checking for memory.h... yes
+checking for unistd.h... yes
+checking for gnu/libc-version.h... yes
+checking for nl_types.h... yes
+checking for malloc.h... yes
+checking for X11/XKBlib.h... yes
+checking for sys/statvfs.h... yes
+checking for sys/statfs.h... yes
+checking for sys/vfs.h... yes
+checking for sys/mount.h... yes
+checking for mmintrin.h... yes
+checking for new... yes
+checking for sys/cdefs.h... yes
+checking for gethostbyname_r in -lc_r... no
+checking for atan in -lm... yes
+checking for dlopen in -ldl... yes
+checking for dlfcn.h... yes
+checking for dladdr... yes
+checking for socket in -lsocket... no
+checking for pthread_create in -lpthreads... no
+checking for pthread_create in -lpthread... yes
+checking whether gcc accepts -pthread... yes
+checking whether mmap() sees write()s... yes
+checking whether gcc needs -traditional... no
+checking for 8-bit clean memcmp... yes
+checking for fchmod... yes
+checking for flockfile... yes
+checking for getc_unlocked... yes
+checking for _getc_nolock... no
+checking for getpagesize... yes
+checking for lchown... yes
+checking for localtime_r... yes
+checking for lstat64... yes
+checking for memmove... yes
+checking for random... yes
+checking for rint... yes
+checking for sbrk... yes
+checking for snprintf... yes
+checking for stat64... yes
+checking for statvfs... yes
+checking for statvfs64... yes
+checking for strerror... yes
+checking for strtok_r... yes
+checking for truncate64... yes
+checking for wcrtomb... yes
+checking for mbrtowc... yes
+checking for res_ninit()... yes
+checking for gnu_get_libc_version()... yes
+checking for iconv in -lc... yes
+checking for iconv()... yes
+checking for iconv() with const input... no
+checking for an implementation of va_copy()... yes
+checking for an implementation of __va_copy()... yes
+checking whether va_lists can be copied by value... no
+checking for C++ exceptions flag... -fno-exceptions
+checking for gcc 3.0 ABI... yes
+checking for C++ "explicit" keyword... yes
+checking for C++ "typename" keyword... yes
+checking for modern C++ template specialization syntax support... yes
+checking whether partial template specialization works... yes
+checking whether operators must be re-defined for templates derived from templates... no
+checking whether we need to cast a derived template to pass as its base class... no
+checking whether the compiler can resolve const ambiguities for templates... yes
+checking whether the C++ "using" keyword can change access... yes
+checking whether the C++ "using" keyword resolves ambiguity... yes
+checking for "std::" namespace... yes
+checking whether standard template operator!=() is ambiguous... unambiguous
+checking for C++ reinterpret_cast... yes
+checking for C++ dynamic_cast to void*... yes
+checking whether C++ requires implementation of unused virtual methods... yes
+checking for trouble comparing to zero near std::operator!=()... no
+checking for LC_MESSAGES... yes
+checking for valid optimization flags... yes
+checking for __cxa_demangle... yes
+checking for unwind.h... yes
+checking for _Unwind_Backtrace... yes
+checking for gcc -pipe support... yes
+checking whether compiler supports -Wno-long-long... yes
+checking whether C compiler supports -fprofile-generate... yes
+checking whether C++ compiler has -pedantic long long bug... no
+checking for correct temporary object destruction order... yes
+checking for correct overload resolution with const and templates... no
+checking for tm_zone tm_gmtoff in struct tm... yes
+checking for setlocale... yes
+creating js-confdefs.h
+==== js-confdefs.h =================================
+/* List of defines generated by configure. Included with preprocessor flag,
+ * -include, to avoid long list of -D defines on the compile command-line.
+ * Do not edit.
+ */
+
+#ifndef _JS_CONFDEFS_H_
+#define _JS_CONFDEFS_H_
+
+#define CPP_THROW_NEW throw()
+#define D_INO d_ino
+#define EDITLINE 1
+#define HAVE_64BIT_OS 1
+#define HAVE_CPP_ACCESS_CHANGING_USING 1
+#define HAVE_CPP_AMBIGUITY_RESOLVING_USING 1
+#define HAVE_CPP_DYNAMIC_CAST_TO_VOID_PTR 1
+#define HAVE_CPP_EXPLICIT 1
+#define HAVE_CPP_MODERN_SPECIALIZE_TEMPLATE_SYNTAX 1
+#define HAVE_CPP_NAMESPACE_STD 1
+#define HAVE_CPP_NEW_CASTS 1
+#define HAVE_CPP_PARTIAL_SPECIALIZATION 1
+#define HAVE_CPP_TYPENAME 1
+#define HAVE_CPP_UNAMBIGUOUS_STD_NOTEQUAL 1
+#define HAVE_DIRENT_H 1
+#define HAVE_DLADDR 1
+#define HAVE_FCHMOD 1
+#define HAVE_FLOCKFILE 1
+#define HAVE_GETC_UNLOCKED 1
+#define HAVE_GETOPT_H 1
+#define HAVE_GETPAGESIZE 1
+#define HAVE_GNU_GET_LIBC_VERSION 1
+#define HAVE_GNU_LIBC_VERSION_H 1
+#define HAVE_I18N_LC_MESSAGES 1
+#define HAVE_ICONV 1
+#define HAVE_INT16_T 1
+#define HAVE_INT32_T 1
+#define HAVE_INT64_T 1
+#define HAVE_LCHOWN 1
+#define HAVE_LIBDL 1
+#define HAVE_LIBM 1
+#define HAVE_LOCALTIME_R 1
+#define HAVE_LSTAT64 1
+#define HAVE_MALLOC_H 1
+#define HAVE_MBRTOWC 1
+#define HAVE_MEMMOVE 1
+#define HAVE_MEMORY_H 1
+#define HAVE_MMINTRIN_H 1
+#define HAVE_NL_TYPES_H 1
+#define HAVE_RANDOM 1
+#define HAVE_RES_NINIT 1
+#define HAVE_RINT 1
+#define HAVE_SBRK 1
+#define HAVE_SETLOCALE 1
+#define HAVE_SIGINFO_T 1
+#define HAVE_SNPRINTF 1
+#define HAVE_STAT64 1
+#define HAVE_STATVFS 1
+#define HAVE_STATVFS64 1
+#define HAVE_STRERROR 1
+#define HAVE_STRTOK_R 1
+#define HAVE_ST_BLKSIZE 1
+#define HAVE_SYS_BITYPES_H 1
+#define HAVE_SYS_CDEFS_H 1
+#define HAVE_SYS_MOUNT_H 1
+#define HAVE_SYS_STATFS_H 1
+#define HAVE_SYS_STATVFS_H 1
+#define HAVE_SYS_VFS_H 1
+#define HAVE_TM_ZONE_TM_GMTOFF 1
+#define HAVE_TRUNCATE64 1
+#define HAVE_UINT 1
+#define HAVE_UNAME_DOMAINNAME_FIELD 1
+#define HAVE_UNISTD_H 1
+#define HAVE_VA_COPY 1
+#define HAVE_VA_LIST_AS_ARRAY 1
+#define HAVE_VISIBILITY_ATTRIBUTE 1
+#define HAVE_VISIBILITY_HIDDEN_ATTRIBUTE 1
+#define HAVE_WCRTOMB 1
+#define HAVE_X11_XKBLIB_H 1
+#define HAVE__UNWIND_BACKTRACE 1
+#define HAVE___CXA_DEMANGLE 1
+#define JS_ALIGN_OF_POINTER 8
+#define JS_BITS_PER_WORD_LOG2 6
+#define JS_BYTES_PER_DOUBLE 8
+#define JS_BYTES_PER_WORD 8
+#define JS_HAVE_STDINT_H 1
+#define MOZ_DLL_SUFFIX ".so"
+#define NEED_CPP_UNUSED_IMPLEMENTATIONS 1
+#define NEW_H <new>
+#define STDC_HEADERS 1
+#define UNIX_ASYNC_DNS 1
+#define VA_COPY va_copy
+#define XP_UNIX 1
+#define _REENTRANT 1
+
+#endif /* _JS_CONFDEFS_H_ */
+
+creating Makefile
+creating shell/Makefile
+creating lirasm/Makefile
+creating jsapi-tests/Makefile
+creating tests/Makefile
+creating config/Makefile
+creating config/mkdepend/Makefile
+creating editline/Makefile
+updating cache ./config.cache
+creating ./config.status
+creating config/autoconf.mk
+creating js-config.h
+invoking make to create js-config script
+rm -f js-config.tmp
+sed < js-config.in > js-config.tmp \
+	-e 's|@prefix@|/usr/local|' \
+	-e 's|@exec_prefix@|/usr/local|' \
+	-e 's|@includedir@|/usr/local/include|' \
+	-e 's|@libdir@|/usr/local/lib|' \
+	-e 's|@MOZILLA_VERSION@||' \
+	-e 's|@LIBRARY_NAME@|mozjs|' \
+	-e 's|@NSPR_CFLAGS@||' \
+	-e 's|@JS_CONFIG_LIBS@| -ldl -lm  -lm -ldl |' \
+	-e 's|@MOZ_JS_LIBS@|-L/usr/local/lib -lmozjs|' \
+	&& mv js-config.tmp js-config && chmod +x js-config
+make export
+make[1]: Entering directory `/home/lyatesco/ldfees32/vendor/bundle/ruby/2.0.0/gems/pre-johnson-2.0.0/vendor/tracemonkey'
+make -C config/ nsinstall
+make[2]: Entering directory `/home/lyatesco/ldfees32/vendor/bundle/ruby/2.0.0/gems/pre-johnson-2.0.0/vendor/tracemonkey/config'
+nsinstall.c
+gcc -o host_nsinstall.o -c -DXP_UNIX -O3  -DUNICODE -D_UNICODE  -I. -I. -I../dist/include -I../dist/include/nsprpub      nsinstall.c
+pathsub.c
+gcc -o host_pathsub.o -c -DXP_UNIX -O3  -DUNICODE -D_UNICODE  -I. -I. -I../dist/include -I../dist/include/nsprpub      pathsub.c
+gcc -o nsinstall -DXP_UNIX -O3  -DUNICODE -D_UNICODE  host_nsinstall.o host_pathsub.o  
+make[2]: Leaving directory `/home/lyatesco/ldfees32/vendor/bundle/ruby/2.0.0/gems/pre-johnson-2.0.0/vendor/tracemonkey/config'
+Creating /home/lyatesco/ldfees32/vendor/bundle/ruby/2.0.0/gems/pre-johnson-2.0.0/vendor/tracemonkey/.deps
+make[2]: Entering directory `/home/lyatesco/ldfees32/vendor/bundle/ruby/2.0.0/gems/pre-johnson-2.0.0/vendor/tracemonkey/config'
+rm -f nfspwd
+cp nfspwd.pl nfspwd
+chmod +x nfspwd
+/home/lyatesco/ldfees32/vendor/bundle/ruby/2.0.0/gems/pre-johnson-2.0.0/vendor/tracemonkey/config/nsinstall -R nsinstall ../dist/bin
+if test ! -d system_wrappers_js; then mkdir system_wrappers_js; fi
+/usr/local/bin/perl ./preprocessor.pl -DOSTYPE=\"Linux3.14.25-grsec.3\" -DOSARCH=Linux -DHAVE_64BIT_OS=1 -DD_INO=d_ino -DSTDC_HEADERS=1 -DHAVE_ST_BLKSIZE=1 -DHAVE_SIGINFO_T=1 -DJS_HAVE_STDINT_H=1 -DJS_BYTES_PER_WORD=8 -DJS_BITS_PER_WORD_LOG2=6 -DJS_ALIGN_OF_POINTER=8 -DJS_BYTES_PER_DOUBLE=8 -DHAVE_INT16_T=1 -DHAVE_INT32_T=1 -DHAVE_INT64_T=1 -DHAVE_UINT=1 -DHAVE_UNAME_DOMAINNAME_FIELD=1 -DHAVE_VISIBILITY_HIDDEN_ATTRIBUTE=1 -DHAVE_VISIBILITY_ATTRIBUTE=1 -DHAVE_DIRENT_H=1 -DHAVE_GETOPT_H=1 -DHAVE_SYS_BITYPES_H=1 -DHAVE_MEMORY_H=1 -DHAVE_UNISTD_H=1 -DHAVE_GNU_LIBC_VERSION_H=1 -DHAVE_NL_TYPES_H=1 -DHAVE_MALLOC_H=1 -DHAVE_X11_XKBLIB_H=1 -DHAVE_SYS_STATVFS_H=1 -DHAVE_SYS_STATFS_H=1 -DHAVE_SYS_VFS_H=1 -DHAVE_SYS_MOUNT_H=1 -DHAVE_MMINTRIN_H=1 -DNEW_H=\<new\> -DHAVE_SYS_CDEFS_H=1 -DHAVE_LIBM=1 -DHAVE_LIBDL=1 -DHAVE_DLADDR=1 -D_REENTRANT=1 -DHAVE_FCHMOD=1 -DHAVE_FLOCKFILE=1 -DHAVE_GETC_UNLOCKED=1 -DHAVE_GETPAGESIZE=1 -DHAVE_LCHOWN=1 -DHAVE_LOCALTIME_R=1 -DHAVE_LSTAT64=1 -DHAVE_MEMMOVE=1 -DHAVE_RANDOM=1 -DHAVE_RINT=1 -DHAVE_SBRK=1 -DHAVE_SNPRINTF=1 -DHAVE_STAT64=1 -DHAVE_STATVFS=1 -DHAVE_STATVFS64=1 -DHAVE_STRERROR=1 -DHAVE_STRTOK_R=1 -DHAVE_TRUNCATE64=1 -DHAVE_WCRTOMB=1 -DHAVE_MBRTOWC=1 -DHAVE_RES_NINIT=1 -DHAVE_GNU_GET_LIBC_VERSION=1 -DHAVE_ICONV=1 -DVA_COPY=va_copy -DHAVE_VA_COPY=1 -DHAVE_VA_LIST_AS_ARRAY=1 -DHAVE_CPP_EXPLICIT=1 -DHAVE_CPP_TYPENAME=1 -DHAVE_CPP_MODERN_SPECIALIZE_TEMPLATE_SYNTAX=1 -DHAVE_CPP_PARTIAL_SPECIALIZATION=1 -DHAVE_CPP_ACCESS_CHANGING_USING=1 -DHAVE_CPP_AMBIGUITY_RESOLVING_USING=1 -DHAVE_CPP_NAMESPACE_STD=1 -DHAVE_CPP_UNAMBIGUOUS_STD_NOTEQUAL=1 -DHAVE_CPP_NEW_CASTS=1 -DHAVE_CPP_DYNAMIC_CAST_TO_VOID_PTR=1 -DNEED_CPP_UNUSED_IMPLEMENTATIONS=1 -DHAVE_I18N_LC_MESSAGES=1 -DHAVE___CXA_DEMANGLE=1 -DHAVE__UNWIND_BACKTRACE=1 -DHAVE_TM_ZONE_TM_GMTOFF=1 -DCPP_THROW_NEW=throw\(\) -DEDITLINE=1 -DMOZ_DLL_SUFFIX=\".so\" -DXP_UNIX=1 -DUNIX_ASYNC_DNS=1 -DHAVE_SETLOCALE=1  \
+		-DBUILD_STATIC_LIBS=1 \
+		./system-headers | /usr/local/bin/perl ./make-system-wrappers.pl system_wrappers_js
+/home/lyatesco/ldfees32/vendor/bundle/ruby/2.0.0/gems/pre-johnson-2.0.0/vendor/tracemonkey/config/nsinstall -R system_wrappers_js ../dist
+make[2]: Leaving directory `/home/lyatesco/ldfees32/vendor/bundle/ruby/2.0.0/gems/pre-johnson-2.0.0/vendor/tracemonkey/config'
+make[2]: Entering directory `/home/lyatesco/ldfees32/vendor/bundle/ruby/2.0.0/gems/pre-johnson-2.0.0/vendor/tracemonkey/editline'
+Creating /home/lyatesco/ldfees32/vendor/bundle/ruby/2.0.0/gems/pre-johnson-2.0.0/vendor/tracemonkey/editline/.deps
+make[2]: Leaving directory `/home/lyatesco/ldfees32/vendor/bundle/ruby/2.0.0/gems/pre-johnson-2.0.0/vendor/tracemonkey/editline'
+make[2]: Entering directory `/home/lyatesco/ldfees32/vendor/bundle/ruby/2.0.0/gems/pre-johnson-2.0.0/vendor/tracemonkey/shell'
+Creating /home/lyatesco/ldfees32/vendor/bundle/ruby/2.0.0/gems/pre-johnson-2.0.0/vendor/tracemonkey/shell/.deps
+make[2]: Leaving directory `/home/lyatesco/ldfees32/vendor/bundle/ruby/2.0.0/gems/pre-johnson-2.0.0/vendor/tracemonkey/shell'
+make[2]: Entering directory `/home/lyatesco/ldfees32/vendor/bundle/ruby/2.0.0/gems/pre-johnson-2.0.0/vendor/tracemonkey/jsapi-tests'
+Creating /home/lyatesco/ldfees32/vendor/bundle/ruby/2.0.0/gems/pre-johnson-2.0.0/vendor/tracemonkey/jsapi-tests/.deps
+make[2]: Leaving directory `/home/lyatesco/ldfees32/vendor/bundle/ruby/2.0.0/gems/pre-johnson-2.0.0/vendor/tracemonkey/jsapi-tests'
+make[2]: Entering directory `/home/lyatesco/ldfees32/vendor/bundle/ruby/2.0.0/gems/pre-johnson-2.0.0/vendor/tracemonkey/tests'
+make[2]: Nothing to be done for `export'.
+make[2]: Leaving directory `/home/lyatesco/ldfees32/vendor/bundle/ruby/2.0.0/gems/pre-johnson-2.0.0/vendor/tracemonkey/tests'
+c++ -DMDCPUCFG=\"md/_linux.cfg\"   -DOSTYPE=\"Linux3.14.25-grsec.3\" -DOSARCH=Linux -DEXPORT_JS_API  -DJS_USE_SAFE_ARENA  -o jscpucfg jscpucfg.cpp
+./jscpucfg > jsautocfg.tmp
+mv jsautocfg.tmp jsautocfg.h
+jskwgen.cpp
+c++ -DMDCPUCFG=\"md/_linux.cfg\" -o host_jskwgen.o -c   -I. -I. -I./dist/include -I./dist/include/nsprpub     -I.  jskwgen.cpp
+c++ -DMDCPUCFG=\"md/_linux.cfg\" -o host_jskwgen   -I. -I. -I./dist/include -I./dist/include/nsprpub     -I. host_jskwgen.o  
+./host_jskwgen /home/lyatesco/ldfees32/vendor/bundle/ruby/2.0.0/gems/pre-johnson-2.0.0/vendor/tracemonkey/jsautokw.h
+/home/lyatesco/ldfees32/vendor/bundle/ruby/2.0.0/gems/pre-johnson-2.0.0/vendor/tracemonkey/config/nsinstall -R -m 644 js-config.h jsautocfg.h /home/lyatesco/ldfees32/vendor/bundle/ruby/2.0.0/gems/pre-johnson-2.0.0/vendor/tracemonkey/jsautokw.h js.msg jsapi.h jsarray.h jsarena.h jsatom.h jsbit.h jsbool.h jsclist.h jscntxt.h jscompat.h jsdate.h jsdbgapi.h jsdhash.h jsdtoa.h jsemit.h jsfun.h jsgc.h jshash.h jsinterp.h jsinttypes.h jsiter.h jslock.h jslong.h jsmath.h jsnum.h jsobj.h jsobjinlines.h json.h jsopcode.tbl jsopcode.h jsotypes.h jsparse.h jsprf.h jsproto.tbl jsprvtd.h jspubtd.h jsregexp.h jsscan.h jsscope.h jsscript.h jsscriptinlines.h jsstaticcheck.h jsstr.h jstask.h jstracer.h jstypes.h jsutil.h jsversion.h jsxdrapi.h jsxml.h ./dist/include
+mkdir -p nanojit
+make[1]: Leaving directory `/home/lyatesco/ldfees32/vendor/bundle/ruby/2.0.0/gems/pre-johnson-2.0.0/vendor/tracemonkey'
+make libs
+make[1]: Entering directory `/home/lyatesco/ldfees32/vendor/bundle/ruby/2.0.0/gems/pre-johnson-2.0.0/vendor/tracemonkey'
+jsoplengen.cpp
+c++ -DMDCPUCFG=\"md/_linux.cfg\" -o host_jsoplengen.o -c   -I. -I. -I./dist/include -I./dist/include/nsprpub     -I.  jsoplengen.cpp
+c++ -DMDCPUCFG=\"md/_linux.cfg\" -o host_jsoplengen   -I. -I. -I./dist/include -I./dist/include/nsprpub     -I. host_jsoplengen.o  
+./host_jsoplengen /home/lyatesco/ldfees32/vendor/bundle/ruby/2.0.0/gems/pre-johnson-2.0.0/vendor/tracemonkey/jsautooplen.h
+jsapi.cpp
+c++ -o jsapi.o -c -I./dist/system_wrappers_js -include ./config/gcc_hidden.h -DOSTYPE=\"Linux3.14.25-grsec.3\" -DOSARCH=Linux -DEXPORT_JS_API  -DJS_USE_SAFE_ARENA  -I. -I. -I./dist/include -I./dist/include/nsprpub     -I.    -fPIC   -fno-rtti -fno-exceptions -Wall -Wpointer-arith -Woverloaded-virtual -Wsynth -Wno-ctor-dtor-privacy -Wno-non-virtual-dtor -Wcast-align -Wno-invalid-offsetof -Wno-variadic-macros -Wno-long-long -pedantic -fno-strict-aliasing -pthread -pipe  -DNDEBUG -DTRIMMED -O3 -fstrict-aliasing -finline-limit=50   -DMOZILLA_CLIENT -include ./js-confdefs.h -Wp,-MD,.deps/jsapi.pp jsapi.cpp
+jsfun.h: In function ‘js_ArgsPrivateNative* js_GetArgsPrivateNative(JSObject*)’:
+jsfun.h:233: warning: converting to non-pointer type ‘long unsigned int’ from NULL
+jsarena.cpp
+c++ -o jsarena.o -c -I./dist/system_wrappers_js -include ./config/gcc_hidden.h -DOSTYPE=\"Linux3.14.25-grsec.3\" -DOSARCH=Linux -DEXPORT_JS_API  -DJS_USE_SAFE_ARENA  -I. -I. -I./dist/include -I./dist/include/nsprpub     -I.    -fPIC   -fno-rtti -fno-exceptions -Wall -Wpointer-arith -Woverloaded-virtual -Wsynth -Wno-ctor-dtor-privacy -Wno-non-virtual-dtor -Wcast-align -Wno-invalid-offsetof -Wno-variadic-macros -Wno-long-long -pedantic -fno-strict-aliasing -pthread -pipe  -DNDEBUG -DTRIMMED -O3 -fstrict-aliasing -finline-limit=50   -DMOZILLA_CLIENT -include ./js-confdefs.h -Wp,-MD,.deps/jsarena.pp jsarena.cpp
+jsarray.cpp
+c++ -o jsarray.o -c -I./dist/system_wrappers_js -include ./config/gcc_hidden.h -DOSTYPE=\"Linux3.14.25-grsec.3\" -DOSARCH=Linux -DEXPORT_JS_API  -DJS_USE_SAFE_ARENA  -I. -I. -I./dist/include -I./dist/include/nsprpub     -I.    -fPIC   -fno-rtti -fno-exceptions -Wall -Wpointer-arith -Woverloaded-virtual -Wsynth -Wno-ctor-dtor-privacy -Wno-non-virtual-dtor -Wcast-align -Wno-invalid-offsetof -Wno-variadic-macros -Wno-long-long -pedantic -fno-strict-aliasing -pthread -pipe  -DNDEBUG -DTRIMMED -O3 -fstrict-aliasing -finline-limit=50   -DMOZILLA_CLIENT -include ./js-confdefs.h -Wp,-MD,.deps/jsarray.pp jsarray.cpp
+jsfun.h: In function ‘js_ArgsPrivateNative* js_GetArgsPrivateNative(JSObject*)’:
+jsfun.h:233: warning: converting to non-pointer type ‘long unsigned int’ from NULL
+jsarray.cpp: In function ‘JSBool ResizeSlots(JSContext*, JSObject*, uint32, uint32, bool)’:
+jsarray.cpp:325: warning: comparison is always false due to limited range of data type
+jsarray.cpp: In function ‘bool IndexToId(JSContext*, JSObject*, jsdouble, JSBool*, jsid*, JSBool)’:
+jsarray.cpp:419: warning: passing ‘jsdouble’ for argument 1 to ‘jsval INT_TO_JSVAL(jsint)’
+jsarray.cpp: In function ‘JSBool array_unshift(JSContext*, uintN, jsval*)’:
+jsarray.cpp:2614: warning: passing ‘jsdouble’ for argument 1 to ‘bool INDEX_TOO_BIG(jsuint)’
+jsatom.cpp
+c++ -o jsatom.o -c -I./dist/system_wrappers_js -include ./config/gcc_hidden.h -DOSTYPE=\"Linux3.14.25-grsec.3\" -DOSARCH=Linux -DEXPORT_JS_API  -DJS_USE_SAFE_ARENA  -I. -I. -I./dist/include -I./dist/include/nsprpub     -I.    -fPIC   -fno-rtti -fno-exceptions -Wall -Wpointer-arith -Woverloaded-virtual -Wsynth -Wno-ctor-dtor-privacy -Wno-non-virtual-dtor -Wcast-align -Wno-invalid-offsetof -Wno-variadic-macros -Wno-long-long -pedantic -fno-strict-aliasing -pthread -pipe  -DNDEBUG -DTRIMMED -O3 -fstrict-aliasing -finline-limit=50   -DMOZILLA_CLIENT -include ./js-confdefs.h -Wp,-MD,.deps/jsatom.pp jsatom.cpp
+jsfun.h: In function ‘js_ArgsPrivateNative* js_GetArgsPrivateNative(JSObject*)’:
+jsfun.h:233: warning: converting to non-pointer type ‘long unsigned int’ from NULL
+jsbool.cpp
+c++ -o jsbool.o -c -I./dist/system_wrappers_js -include ./config/gcc_hidden.h -DOSTYPE=\"Linux3.14.25-grsec.3\" -DOSARCH=Linux -DEXPORT_JS_API  -DJS_USE_SAFE_ARENA  -I. -I. -I./dist/include -I./dist/include/nsprpub     -I.    -fPIC   -fno-rtti -fno-exceptions -Wall -Wpointer-arith -Woverloaded-virtual -Wsynth -Wno-ctor-dtor-privacy -Wno-non-virtual-dtor -Wcast-align -Wno-invalid-offsetof -Wno-variadic-macros -Wno-long-long -pedantic -fno-strict-aliasing -pthread -pipe  -DNDEBUG -DTRIMMED -O3 -fstrict-aliasing -finline-limit=50   -DMOZILLA_CLIENT -include ./js-confdefs.h -Wp,-MD,.deps/jsbool.pp jsbool.cpp
+jsfun.h: In function ‘js_ArgsPrivateNative* js_GetArgsPrivateNative(JSObject*)’:
+jsfun.h:233: warning: converting to non-pointer type ‘long unsigned int’ from NULL
+jscntxt.cpp
+c++ -o jscntxt.o -c -I./dist/system_wrappers_js -include ./config/gcc_hidden.h -DOSTYPE=\"Linux3.14.25-grsec.3\" -DOSARCH=Linux -DEXPORT_JS_API  -DJS_USE_SAFE_ARENA  -I. -I. -I./dist/include -I./dist/include/nsprpub     -I.    -fPIC   -fno-rtti -fno-exceptions -Wall -Wpointer-arith -Woverloaded-virtual -Wsynth -Wno-ctor-dtor-privacy -Wno-non-virtual-dtor -Wcast-align -Wno-invalid-offsetof -Wno-variadic-macros -Wno-long-long -pedantic -fno-strict-aliasing -pthread -pipe  -DNDEBUG -DTRIMMED -O3 -fstrict-aliasing -finline-limit=50   -DMOZILLA_CLIENT -include ./js-confdefs.h -Wp,-MD,.deps/jscntxt.pp jscntxt.cpp
+jsfun.h: In function ‘js_ArgsPrivateNative* js_GetArgsPrivateNative(JSObject*)’:
+jsfun.h:233: warning: converting to non-pointer type ‘long unsigned int’ from NULL
+jsdate.cpp
+c++ -o jsdate.o -c -I./dist/system_wrappers_js -include ./config/gcc_hidden.h -DOSTYPE=\"Linux3.14.25-grsec.3\" -DOSARCH=Linux -DEXPORT_JS_API  -DJS_USE_SAFE_ARENA  -I. -I. -I./dist/include -I./dist/include/nsprpub     -I.    -fPIC   -fno-rtti -fno-exceptions -Wall -Wpointer-arith -Woverloaded-virtual -Wsynth -Wno-ctor-dtor-privacy -Wno-non-virtual-dtor -Wcast-align -Wno-invalid-offsetof -Wno-variadic-macros -Wno-long-long -pedantic -fno-strict-aliasing -pthread -pipe  -DNDEBUG -DTRIMMED -O3 -fstrict-aliasing -finline-limit=50   -DMOZILLA_CLIENT -include ./js-confdefs.h -Wp,-MD,.deps/jsdate.pp jsdate.cpp
+jsfun.h: In function ‘js_ArgsPrivateNative* js_GetArgsPrivateNative(JSObject*)’:
+jsfun.h:233: warning: converting to non-pointer type ‘long unsigned int’ from NULL
+jsdate.cpp: In function ‘intN DaysInMonth(jsint, jsint)’:
+jsdate.cpp:232: warning: converting to ‘intN’ from ‘jsdouble’
+jsdbgapi.cpp
+c++ -o jsdbgapi.o -c -I./dist/system_wrappers_js -include ./config/gcc_hidden.h -DOSTYPE=\"Linux3.14.25-grsec.3\" -DOSARCH=Linux -DEXPORT_JS_API  -DJS_USE_SAFE_ARENA  -I. -I. -I./dist/include -I./dist/include/nsprpub     -I.    -fPIC   -fno-rtti -fno-exceptions -Wall -Wpointer-arith -Woverloaded-virtual -Wsynth -Wno-ctor-dtor-privacy -Wno-non-virtual-dtor -Wcast-align -Wno-invalid-offsetof -Wno-variadic-macros -Wno-long-long -pedantic -fno-strict-aliasing -pthread -pipe  -DNDEBUG -DTRIMMED -O3 -fstrict-aliasing -finline-limit=50   -DMOZILLA_CLIENT -include ./js-confdefs.h -Wp,-MD,.deps/jsdbgapi.pp jsdbgapi.cpp
+jsfun.h: In function ‘js_ArgsPrivateNative* js_GetArgsPrivateNative(JSObject*)’:
+jsfun.h:233: warning: converting to non-pointer type ‘long unsigned int’ from NULL
+jsdhash.cpp
+c++ -o jsdhash.o -c -I./dist/system_wrappers_js -include ./config/gcc_hidden.h -DOSTYPE=\"Linux3.14.25-grsec.3\" -DOSARCH=Linux -DEXPORT_JS_API  -DJS_USE_SAFE_ARENA  -I. -I. -I./dist/include -I./dist/include/nsprpub     -I.    -fPIC   -fno-rtti -fno-exceptions -Wall -Wpointer-arith -Woverloaded-virtual -Wsynth -Wno-ctor-dtor-privacy -Wno-non-virtual-dtor -Wcast-align -Wno-invalid-offsetof -Wno-variadic-macros -Wno-long-long -pedantic -fno-strict-aliasing -pthread -pipe  -DNDEBUG -DTRIMMED -O3 -fstrict-aliasing -finline-limit=50   -DMOZILLA_CLIENT -include ./js-confdefs.h -Wp,-MD,.deps/jsdhash.pp jsdhash.cpp
+jsdtoa.cpp
+c++ -o jsdtoa.o -c -I./dist/system_wrappers_js -include ./config/gcc_hidden.h -DOSTYPE=\"Linux3.14.25-grsec.3\" -DOSARCH=Linux -DEXPORT_JS_API  -DJS_USE_SAFE_ARENA  -I. -I. -I./dist/include -I./dist/include/nsprpub     -I.    -fPIC   -fno-rtti -fno-exceptions -Wall -Wpointer-arith -Woverloaded-virtual -Wsynth -Wno-ctor-dtor-privacy -Wno-non-virtual-dtor -Wcast-align -Wno-invalid-offsetof -Wno-variadic-macros -Wno-long-long -pedantic -fno-strict-aliasing -pthread -pipe  -DNDEBUG -DTRIMMED -O3 -fstrict-aliasing -finline-limit=50   -DMOZILLA_CLIENT -include ./js-confdefs.h -Wp,-MD,.deps/jsdtoa.pp jsdtoa.cpp
+jsemit.cpp
+c++ -o jsemit.o -c -I./dist/system_wrappers_js -include ./config/gcc_hidden.h -DOSTYPE=\"Linux3.14.25-grsec.3\" -DOSARCH=Linux -DEXPORT_JS_API  -DJS_USE_SAFE_ARENA  -I. -I. -I./dist/include -I./dist/include/nsprpub     -I.    -fPIC   -fno-rtti -fno-exceptions -Wall -Wpointer-arith -Woverloaded-virtual -Wsynth -Wno-ctor-dtor-privacy -Wno-non-virtual-dtor -Wcast-align -Wno-invalid-offsetof -Wno-variadic-macros -Wno-long-long -pedantic -fno-strict-aliasing -pthread -pipe  -DNDEBUG -DTRIMMED -O3 -fstrict-aliasing -finline-limit=50   -DMOZILLA_CLIENT -include ./js-confdefs.h -Wp,-MD,.deps/jsemit.pp jsemit.cpp
+jsfun.h: In function ‘js_ArgsPrivateNative* js_GetArgsPrivateNative(JSObject*)’:
+jsfun.h:233: warning: converting to non-pointer type ‘long unsigned int’ from NULL
+jsemit.cpp: In function ‘JSBool BindNameToSlot(JSContext*, JSCodeGenerator*, JSParseNode*)’:
+jsemit.cpp:2112: warning: unused variable ‘caller’
+jsexn.cpp
+c++ -o jsexn.o -c -I./dist/system_wrappers_js -include ./config/gcc_hidden.h -DOSTYPE=\"Linux3.14.25-grsec.3\" -DOSARCH=Linux -DEXPORT_JS_API  -DJS_USE_SAFE_ARENA  -I. -I. -I./dist/include -I./dist/include/nsprpub     -I.    -fPIC   -fno-rtti -fno-exceptions -Wall -Wpointer-arith -Woverloaded-virtual -Wsynth -Wno-ctor-dtor-privacy -Wno-non-virtual-dtor -Wcast-align -Wno-invalid-offsetof -Wno-variadic-macros -Wno-long-long -pedantic -fno-strict-aliasing -pthread -pipe  -DNDEBUG -DTRIMMED -O3 -fstrict-aliasing -finline-limit=50   -DMOZILLA_CLIENT -include ./js-confdefs.h -Wp,-MD,.deps/jsexn.pp jsexn.cpp
+jsfun.h: In function ‘js_ArgsPrivateNative* js_GetArgsPrivateNative(JSObject*)’:
+jsfun.h:233: warning: converting to non-pointer type ‘long unsigned int’ from NULL
+jsfun.cpp
+c++ -o jsfun.o -c -I./dist/system_wrappers_js -include ./config/gcc_hidden.h -DOSTYPE=\"Linux3.14.25-grsec.3\" -DOSARCH=Linux -DEXPORT_JS_API  -DJS_USE_SAFE_ARENA  -I. -I. -I./dist/include -I./dist/include/nsprpub     -I.    -fPIC   -fno-rtti -fno-exceptions -Wall -Wpointer-arith -Woverloaded-virtual -Wsynth -Wno-ctor-dtor-privacy -Wno-non-virtual-dtor -Wcast-align -Wno-invalid-offsetof -Wno-variadic-macros -Wno-long-long -pedantic -fno-strict-aliasing -pthread -pipe  -DNDEBUG -DTRIMMED -O3 -fstrict-aliasing -finline-limit=50   -DMOZILLA_CLIENT -include ./js-confdefs.h -Wp,-MD,.deps/jsfun.pp jsfun.cpp
+jsfun.h: In function ‘js_ArgsPrivateNative* js_GetArgsPrivateNative(JSObject*)’:
+jsfun.h:233: warning: converting to non-pointer type ‘long unsigned int’ from NULL
+jsfun.cpp: In function ‘JSObject* WrapEscapingClosure(JSContext*, JSStackFrame*, JSObject*, JSFunction*)’:
+jsfun.cpp:372: warning: converting to non-pointer type ‘jsuword’ from NULL
+jsfun.cpp: In function ‘void js_ReportIsNotFunction(JSContext*, jsval*, uintN)’:
+jsfun.cpp:2603: warning: converting to non-pointer type ‘bool’ from NULL
+jsgc.cpp
+c++ -o jsgc.o -c -I./dist/system_wrappers_js -include ./config/gcc_hidden.h -DOSTYPE=\"Linux3.14.25-grsec.3\" -DOSARCH=Linux -DEXPORT_JS_API  -DJS_USE_SAFE_ARENA  -I. -I. -I./dist/include -I./dist/include/nsprpub     -I.    -fPIC   -fno-rtti -fno-exceptions -Wall -Wpointer-arith -Woverloaded-virtual -Wsynth -Wno-ctor-dtor-privacy -Wno-non-virtual-dtor -Wcast-align -Wno-invalid-offsetof -Wno-variadic-macros -Wno-long-long -pedantic -fno-strict-aliasing -pthread -pipe  -DNDEBUG -DTRIMMED -O3 -fstrict-aliasing -finline-limit=50   -DMOZILLA_CLIENT -include ./js-confdefs.h -Wp,-MD,.deps/jsgc.pp jsgc.cpp
+jsfun.h: In function ‘js_ArgsPrivateNative* js_GetArgsPrivateNative(JSObject*)’:
+jsfun.h:233: warning: converting to non-pointer type ‘long unsigned int’ from NULL
+jshash.cpp
+c++ -o jshash.o -c -I./dist/system_wrappers_js -include ./config/gcc_hidden.h -DOSTYPE=\"Linux3.14.25-grsec.3\" -DOSARCH=Linux -DEXPORT_JS_API  -DJS_USE_SAFE_ARENA  -I. -I. -I./dist/include -I./dist/include/nsprpub     -I.    -fPIC   -fno-rtti -fno-exceptions -Wall -Wpointer-arith -Woverloaded-virtual -Wsynth -Wno-ctor-dtor-privacy -Wno-non-virtual-dtor -Wcast-align -Wno-invalid-offsetof -Wno-variadic-macros -Wno-long-long -pedantic -fno-strict-aliasing -pthread -pipe  -DNDEBUG -DTRIMMED -O3 -fstrict-aliasing -finline-limit=50   -DMOZILLA_CLIENT -include ./js-confdefs.h -Wp,-MD,.deps/jshash.pp jshash.cpp
+jsinterp.cpp
+c++ -o jsinterp.o -c -I./dist/system_wrappers_js -include ./config/gcc_hidden.h -DOSTYPE=\"Linux3.14.25-grsec.3\" -DOSARCH=Linux -DEXPORT_JS_API  -DJS_USE_SAFE_ARENA  -I. -I. -I./dist/include -I./dist/include/nsprpub     -I.    -fPIC   -fno-rtti -fno-exceptions -Wall -Wpointer-arith -Woverloaded-virtual -Wsynth -Wno-ctor-dtor-privacy -Wno-non-virtual-dtor -Wcast-align -Wno-invalid-offsetof -Wno-variadic-macros -Wno-long-long -pedantic -fno-strict-aliasing -pthread -pipe  -DNDEBUG -DTRIMMED -O3 -fstrict-aliasing   -DMOZILLA_CLIENT -include ./js-confdefs.h -Wp,-MD,.deps/jsinterp.pp jsinterp.cpp
+jsfun.h: In function ‘js_ArgsPrivateNative* js_GetArgsPrivateNative(JSObject*)’:
+jsfun.h:233: warning: converting to non-pointer type ‘long unsigned int’ from NULL
+jsops.cpp: In function ‘JSBool js_Interpret(JSContext*)’:
+jsops.cpp:2097: warning: converting to non-pointer type ‘long int’ from NULL
+jsinvoke.cpp
+c++ -o jsinvoke.o -c -I./dist/system_wrappers_js -include ./config/gcc_hidden.h -DOSTYPE=\"Linux3.14.25-grsec.3\" -DOSARCH=Linux -DEXPORT_JS_API  -DJS_USE_SAFE_ARENA  -I. -I. -I./dist/include -I./dist/include/nsprpub     -I.    -fPIC   -fno-rtti -fno-exceptions -Wall -Wpointer-arith -Woverloaded-virtual -Wsynth -Wno-ctor-dtor-privacy -Wno-non-virtual-dtor -Wcast-align -Wno-invalid-offsetof -Wno-variadic-macros -Wno-long-long -pedantic -fno-strict-aliasing -pthread -pipe  -DNDEBUG -DTRIMMED -O3 -fstrict-aliasing -finline-limit=50   -DMOZILLA_CLIENT -include ./js-confdefs.h -Wp,-MD,.deps/jsinvoke.pp jsinvoke.cpp
+jsfun.h: In function ‘js_ArgsPrivateNative* js_GetArgsPrivateNative(JSObject*)’:
+jsfun.h:233: warning: converting to non-pointer type ‘long unsigned int’ from NULL
+jsinterp.cpp: In function ‘JSBool js_Invoke(JSContext*, uintN, jsval*, uintN)’:
+jsinterp.cpp:1283: warning: converting to non-pointer type ‘long int’ from NULL
+jsinterp.cpp: In function ‘JSBool js_Execute(JSContext*, JSObject*, JSScript*, JSStackFrame*, uintN, jsval*)’:
+jsinterp.cpp:1526: warning: converting to non-pointer type ‘long int’ from NULL
+jsiter.cpp
+c++ -o jsiter.o -c -I./dist/system_wrappers_js -include ./config/gcc_hidden.h -DOSTYPE=\"Linux3.14.25-grsec.3\" -DOSARCH=Linux -DEXPORT_JS_API  -DJS_USE_SAFE_ARENA  -I. -I. -I./dist/include -I./dist/include/nsprpub     -I.    -fPIC   -fno-rtti -fno-exceptions -Wall -Wpointer-arith -Woverloaded-virtual -Wsynth -Wno-ctor-dtor-privacy -Wno-non-virtual-dtor -Wcast-align -Wno-invalid-offsetof -Wno-variadic-macros -Wno-long-long -pedantic -fno-strict-aliasing -pthread -pipe  -DNDEBUG -DTRIMMED -O3 -fstrict-aliasing -finline-limit=50   -DMOZILLA_CLIENT -include ./js-confdefs.h -Wp,-MD,.deps/jsiter.pp jsiter.cpp
+jsfun.h: In function ‘js_ArgsPrivateNative* js_GetArgsPrivateNative(JSObject*)’:
+jsfun.h:233: warning: converting to non-pointer type ‘long unsigned int’ from NULL
+jsiter.cpp: In function ‘JSObject* js_NewGenerator(JSContext*, JSStackFrame*)’:
+jsiter.cpp:749: warning: converting to non-pointer type ‘long int’ from NULL
+jslock.cpp
+c++ -o jslock.o -c -I./dist/system_wrappers_js -include ./config/gcc_hidden.h -DOSTYPE=\"Linux3.14.25-grsec.3\" -DOSARCH=Linux -DEXPORT_JS_API  -DJS_USE_SAFE_ARENA  -I. -I. -I./dist/include -I./dist/include/nsprpub     -I.    -fPIC   -fno-rtti -fno-exceptions -Wall -Wpointer-arith -Woverloaded-virtual -Wsynth -Wno-ctor-dtor-privacy -Wno-non-virtual-dtor -Wcast-align -Wno-invalid-offsetof -Wno-variadic-macros -Wno-long-long -pedantic -fno-strict-aliasing -pthread -pipe  -DNDEBUG -DTRIMMED -O3 -fstrict-aliasing -finline-limit=50   -DMOZILLA_CLIENT -include ./js-confdefs.h -Wp,-MD,.deps/jslock.pp jslock.cpp
+jslog2.cpp
+c++ -o jslog2.o -c -I./dist/system_wrappers_js -include ./config/gcc_hidden.h -DOSTYPE=\"Linux3.14.25-grsec.3\" -DOSARCH=Linux -DEXPORT_JS_API  -DJS_USE_SAFE_ARENA  -I. -I. -I./dist/include -I./dist/include/nsprpub     -I.    -fPIC   -fno-rtti -fno-exceptions -Wall -Wpointer-arith -Woverloaded-virtual -Wsynth -Wno-ctor-dtor-privacy -Wno-non-virtual-dtor -Wcast-align -Wno-invalid-offsetof -Wno-variadic-macros -Wno-long-long -pedantic -fno-strict-aliasing -pthread -pipe  -DNDEBUG -DTRIMMED -O3 -fstrict-aliasing -finline-limit=50   -DMOZILLA_CLIENT -include ./js-confdefs.h -Wp,-MD,.deps/jslog2.pp jslog2.cpp
+jsmath.cpp
+c++ -o jsmath.o -c -I./dist/system_wrappers_js -include ./config/gcc_hidden.h -DOSTYPE=\"Linux3.14.25-grsec.3\" -DOSARCH=Linux -DEXPORT_JS_API  -DJS_USE_SAFE_ARENA  -I. -I. -I./dist/include -I./dist/include/nsprpub     -I.    -fPIC   -fno-rtti -fno-exceptions -Wall -Wpointer-arith -Woverloaded-virtual -Wsynth -Wno-ctor-dtor-privacy -Wno-non-virtual-dtor -Wcast-align -Wno-invalid-offsetof -Wno-variadic-macros -Wno-long-long -pedantic -fno-strict-aliasing -pthread -pipe  -DNDEBUG -DTRIMMED -O3 -fstrict-aliasing -finline-limit=50   -DMOZILLA_CLIENT -include ./js-confdefs.h -Wp,-MD,.deps/jsmath.pp jsmath.cpp
+jsfun.h: In function ‘js_ArgsPrivateNative* js_GetArgsPrivateNative(JSObject*)’:
+jsfun.h:233: warning: converting to non-pointer type ‘long unsigned int’ from NULL
+jsnum.cpp
+c++ -o jsnum.o -c -I./dist/system_wrappers_js -include ./config/gcc_hidden.h -DOSTYPE=\"Linux3.14.25-grsec.3\" -DOSARCH=Linux -DEXPORT_JS_API  -DJS_USE_SAFE_ARENA  -I. -I. -I./dist/include -I./dist/include/nsprpub     -I.    -fPIC   -fno-rtti -fno-exceptions -Wall -Wpointer-arith -Woverloaded-virtual -Wsynth -Wno-ctor-dtor-privacy -Wno-non-virtual-dtor -Wcast-align -Wno-invalid-offsetof -Wno-variadic-macros -Wno-long-long -pedantic -fno-strict-aliasing -pthread -pipe  -DNDEBUG -DTRIMMED -O3 -fstrict-aliasing -finline-limit=50   -DMOZILLA_CLIENT -include ./js-confdefs.h -Wp,-MD,.deps/jsnum.pp jsnum.cpp
+jsfun.h: In function ‘js_ArgsPrivateNative* js_GetArgsPrivateNative(JSObject*)’:
+jsfun.h:233: warning: converting to non-pointer type ‘long unsigned int’ from NULL
+jsobj.cpp
+c++ -o jsobj.o -c -I./dist/system_wrappers_js -include ./config/gcc_hidden.h -DOSTYPE=\"Linux3.14.25-grsec.3\" -DOSARCH=Linux -DEXPORT_JS_API  -DJS_USE_SAFE_ARENA  -I. -I. -I./dist/include -I./dist/include/nsprpub     -I.    -fPIC   -fno-rtti -fno-exceptions -Wall -Wpointer-arith -Woverloaded-virtual -Wsynth -Wno-ctor-dtor-privacy -Wno-non-virtual-dtor -Wcast-align -Wno-invalid-offsetof -Wno-variadic-macros -Wno-long-long -pedantic -fno-strict-aliasing -pthread -pipe  -DNDEBUG -DTRIMMED -O3 -fstrict-aliasing -finline-limit=50   -DMOZILLA_CLIENT -include ./js-confdefs.h -Wp,-MD,.deps/jsobj.pp jsobj.cpp
+jsfun.h: In function ‘js_ArgsPrivateNative* js_GetArgsPrivateNative(JSObject*)’:
+jsfun.h:233: warning: converting to non-pointer type ‘long unsigned int’ from NULL
+jsobj.cpp: In function ‘JSBool js_SetPropertyHelper(JSContext*, JSObject*, jsid, JSBool, jsval*)’:
+jsobj.cpp:4539: warning: converting to non-pointer type ‘JSBool’ from NULL
+json.cpp
+c++ -o json.o -c -I./dist/system_wrappers_js -include ./config/gcc_hidden.h -DOSTYPE=\"Linux3.14.25-grsec.3\" -DOSARCH=Linux -DEXPORT_JS_API  -DJS_USE_SAFE_ARENA  -I. -I. -I./dist/include -I./dist/include/nsprpub     -I.    -fPIC   -fno-rtti -fno-exceptions -Wall -Wpointer-arith -Woverloaded-virtual -Wsynth -Wno-ctor-dtor-privacy -Wno-non-virtual-dtor -Wcast-align -Wno-invalid-offsetof -Wno-variadic-macros -Wno-long-long -pedantic -fno-strict-aliasing -pthread -pipe  -DNDEBUG -DTRIMMED -O3 -fstrict-aliasing -finline-limit=50   -DMOZILLA_CLIENT -include ./js-confdefs.h -Wp,-MD,.deps/json.pp json.cpp
+jsfun.h: In function ‘js_ArgsPrivateNative* js_GetArgsPrivateNative(JSObject*)’:
+jsfun.h:233: warning: converting to non-pointer type ‘long unsigned int’ from NULL
+jsopcode.cpp
+c++ -o jsopcode.o -c -I./dist/system_wrappers_js -include ./config/gcc_hidden.h -DOSTYPE=\"Linux3.14.25-grsec.3\" -DOSARCH=Linux -DEXPORT_JS_API  -DJS_USE_SAFE_ARENA  -I. -I. -I./dist/include -I./dist/include/nsprpub     -I.    -fPIC   -fno-rtti -fno-exceptions -Wall -Wpointer-arith -Woverloaded-virtual -Wsynth -Wno-ctor-dtor-privacy -Wno-non-virtual-dtor -Wcast-align -Wno-invalid-offsetof -Wno-variadic-macros -Wno-long-long -pedantic -fno-strict-aliasing -pthread -pipe  -DNDEBUG -DTRIMMED -O3 -fstrict-aliasing -finline-limit=50   -DMOZILLA_CLIENT -include ./js-confdefs.h -Wp,-MD,.deps/jsopcode.pp jsopcode.cpp
+jsfun.h: In function ‘js_ArgsPrivateNative* js_GetArgsPrivateNative(JSObject*)’:
+jsfun.h:233: warning: converting to non-pointer type ‘long unsigned int’ from NULL
+jsparse.cpp
+c++ -o jsparse.o -c -I./dist/system_wrappers_js -include ./config/gcc_hidden.h -DOSTYPE=\"Linux3.14.25-grsec.3\" -DOSARCH=Linux -DEXPORT_JS_API  -DJS_USE_SAFE_ARENA  -I. -I. -I./dist/include -I./dist/include/nsprpub     -I.    -fPIC   -fno-rtti -fno-exceptions -Wall -Wpointer-arith -Woverloaded-virtual -Wsynth -Wno-ctor-dtor-privacy -Wno-non-virtual-dtor -Wcast-align -Wno-invalid-offsetof -Wno-variadic-macros -Wno-long-long -pedantic -fno-strict-aliasing -pthread -pipe  -DNDEBUG -DTRIMMED -O3 -fstrict-aliasing -finline-limit=50   -DMOZILLA_CLIENT -include ./js-confdefs.h -Wp,-MD,.deps/jsparse.pp jsparse.cpp
+jsfun.h: In function ‘js_ArgsPrivateNative* js_GetArgsPrivateNative(JSObject*)’:
+jsfun.h:233: warning: converting to non-pointer type ‘long unsigned int’ from NULL
+jsparse.cpp: In static member function ‘static bool JSCompiler::compileFunctionBody(JSContext*, JSFunction*, JSPrincipals*, const jschar*, size_t, const char*, uintN)’:
+jsparse.cpp:1481: warning: converting to non-pointer type ‘bool’ from NULL
+jsparse.cpp: In function ‘bool RebindLets(JSParseNode*, JSTreeContext*)’:
+jsparse.cpp:4320: warning: converting to non-pointer type ‘bool’ from NULL
+jsparse.cpp: In member function ‘void JSCompiler::setFunctionKinds(JSFunctionBox*, uint16&)’:
+jsparse.cpp:1902: warning: comparison is always 0 due to width of bit-field
+jsprf.cpp
+c++ -o jsprf.o -c -I./dist/system_wrappers_js -include ./config/gcc_hidden.h -DOSTYPE=\"Linux3.14.25-grsec.3\" -DOSARCH=Linux -DEXPORT_JS_API  -DJS_USE_SAFE_ARENA  -I. -I. -I./dist/include -I./dist/include/nsprpub     -I.    -fPIC   -fno-rtti -fno-exceptions -Wall -Wpointer-arith -Woverloaded-virtual -Wsynth -Wno-ctor-dtor-privacy -Wno-non-virtual-dtor -Wcast-align -Wno-invalid-offsetof -Wno-variadic-macros -Wno-long-long -pedantic -fno-strict-aliasing -pthread -pipe  -DNDEBUG -DTRIMMED -O3 -fstrict-aliasing -finline-limit=50   -DMOZILLA_CLIENT -include ./js-confdefs.h -Wp,-MD,.deps/jsprf.pp jsprf.cpp
+jsregexp.cpp
+c++ -o jsregexp.o -c -I./dist/system_wrappers_js -include ./config/gcc_hidden.h -DOSTYPE=\"Linux3.14.25-grsec.3\" -DOSARCH=Linux -DEXPORT_JS_API  -DJS_USE_SAFE_ARENA  -I. -I. -I./dist/include -I./dist/include/nsprpub     -I.    -fPIC   -fno-rtti -fno-exceptions -Wall -Wpointer-arith -Woverloaded-virtual -Wsynth -Wno-ctor-dtor-privacy -Wno-non-virtual-dtor -Wcast-align -Wno-invalid-offsetof -Wno-variadic-macros -Wno-long-long -pedantic -fno-strict-aliasing -pthread -pipe  -DNDEBUG -DTRIMMED -O3 -fstrict-aliasing -finline-limit=50   -DMOZILLA_CLIENT -include ./js-confdefs.h -Wp,-MD,.deps/jsregexp.pp jsregexp.cpp
+jsfun.h: In function ‘js_ArgsPrivateNative* js_GetArgsPrivateNative(JSObject*)’:
+jsfun.h:233: warning: converting to non-pointer type ‘long unsigned int’ from NULL
+jsscan.cpp
+c++ -o jsscan.o -c -I./dist/system_wrappers_js -include ./config/gcc_hidden.h -DOSTYPE=\"Linux3.14.25-grsec.3\" -DOSARCH=Linux -DEXPORT_JS_API  -DJS_USE_SAFE_ARENA  -I. -I. -I./dist/include -I./dist/include/nsprpub     -I.    -fPIC   -fno-rtti -fno-exceptions -Wall -Wpointer-arith -Woverloaded-virtual -Wsynth -Wno-ctor-dtor-privacy -Wno-non-virtual-dtor -Wcast-align -Wno-invalid-offsetof -Wno-variadic-macros -Wno-long-long -pedantic -fno-strict-aliasing -pthread -pipe  -DNDEBUG -DTRIMMED -O3 -fstrict-aliasing -finline-limit=50   -DMOZILLA_CLIENT -include ./js-confdefs.h -Wp,-MD,.deps/jsscan.pp jsscan.cpp
+jsfun.h: In function ‘js_ArgsPrivateNative* js_GetArgsPrivateNative(JSObject*)’:
+jsfun.h:233: warning: converting to non-pointer type ‘long unsigned int’ from NULL
+jsscope.cpp
+c++ -o jsscope.o -c -I./dist/system_wrappers_js -include ./config/gcc_hidden.h -DOSTYPE=\"Linux3.14.25-grsec.3\" -DOSARCH=Linux -DEXPORT_JS_API  -DJS_USE_SAFE_ARENA  -I. -I. -I./dist/include -I./dist/include/nsprpub     -I.    -fPIC   -fno-rtti -fno-exceptions -Wall -Wpointer-arith -Woverloaded-virtual -Wsynth -Wno-ctor-dtor-privacy -Wno-non-virtual-dtor -Wcast-align -Wno-invalid-offsetof -Wno-variadic-macros -Wno-long-long -pedantic -fno-strict-aliasing -pthread -pipe  -DNDEBUG -DTRIMMED -O3 -fstrict-aliasing -finline-limit=50   -DMOZILLA_CLIENT -include ./js-confdefs.h -Wp,-MD,.deps/jsscope.pp jsscope.cpp
+jsfun.h: In function ‘js_ArgsPrivateNative* js_GetArgsPrivateNative(JSObject*)’:
+jsfun.h:233: warning: converting to non-pointer type ‘long unsigned int’ from NULL
+jsscript.cpp
+c++ -o jsscript.o -c -I./dist/system_wrappers_js -include ./config/gcc_hidden.h -DOSTYPE=\"Linux3.14.25-grsec.3\" -DOSARCH=Linux -DEXPORT_JS_API  -DJS_USE_SAFE_ARENA  -I. -I. -I./dist/include -I./dist/include/nsprpub     -I.    -fPIC   -fno-rtti -fno-exceptions -Wall -Wpointer-arith -Woverloaded-virtual -Wsynth -Wno-ctor-dtor-privacy -Wno-non-virtual-dtor -Wcast-align -Wno-invalid-offsetof -Wno-variadic-macros -Wno-long-long -pedantic -fno-strict-aliasing -pthread -pipe  -DNDEBUG -DTRIMMED -O3 -fstrict-aliasing -finline-limit=50   -DMOZILLA_CLIENT -include ./js-confdefs.h -Wp,-MD,.deps/jsscript.pp jsscript.cpp
+jsfun.h: In function ‘js_ArgsPrivateNative* js_GetArgsPrivateNative(JSObject*)’:
+jsfun.h:233: warning: converting to non-pointer type ‘long unsigned int’ from NULL
+jsstr.cpp
+c++ -o jsstr.o -c -I./dist/system_wrappers_js -include ./config/gcc_hidden.h -DOSTYPE=\"Linux3.14.25-grsec.3\" -DOSARCH=Linux -DEXPORT_JS_API  -DJS_USE_SAFE_ARENA  -I. -I. -I./dist/include -I./dist/include/nsprpub     -I.    -fPIC   -fno-rtti -fno-exceptions -Wall -Wpointer-arith -Woverloaded-virtual -Wsynth -Wno-ctor-dtor-privacy -Wno-non-virtual-dtor -Wcast-align -Wno-invalid-offsetof -Wno-variadic-macros -Wno-long-long -pedantic -fno-strict-aliasing -pthread -pipe  -DNDEBUG -DTRIMMED -O3 -fstrict-aliasing -finline-limit=50   -DMOZILLA_CLIENT -include ./js-confdefs.h -Wp,-MD,.deps/jsstr.pp jsstr.cpp
+jsfun.h: In function ‘js_ArgsPrivateNative* js_GetArgsPrivateNative(JSObject*)’:
+jsfun.h:233: warning: converting to non-pointer type ‘long unsigned int’ from NULL
+jstask.cpp
+c++ -o jstask.o -c -I./dist/system_wrappers_js -include ./config/gcc_hidden.h -DOSTYPE=\"Linux3.14.25-grsec.3\" -DOSARCH=Linux -DEXPORT_JS_API  -DJS_USE_SAFE_ARENA  -I. -I. -I./dist/include -I./dist/include/nsprpub     -I.    -fPIC   -fno-rtti -fno-exceptions -Wall -Wpointer-arith -Woverloaded-virtual -Wsynth -Wno-ctor-dtor-privacy -Wno-non-virtual-dtor -Wcast-align -Wno-invalid-offsetof -Wno-variadic-macros -Wno-long-long -pedantic -fno-strict-aliasing -pthread -pipe  -DNDEBUG -DTRIMMED -O3 -fstrict-aliasing -finline-limit=50   -DMOZILLA_CLIENT -include ./js-confdefs.h -Wp,-MD,.deps/jstask.pp jstask.cpp
+jsutil.cpp
+c++ -o jsutil.o -c -I./dist/system_wrappers_js -include ./config/gcc_hidden.h -DOSTYPE=\"Linux3.14.25-grsec.3\" -DOSARCH=Linux -DEXPORT_JS_API  -DJS_USE_SAFE_ARENA  -I. -I. -I./dist/include -I./dist/include/nsprpub     -I.    -fPIC   -fno-rtti -fno-exceptions -Wall -Wpointer-arith -Woverloaded-virtual -Wsynth -Wno-ctor-dtor-privacy -Wno-non-virtual-dtor -Wcast-align -Wno-invalid-offsetof -Wno-variadic-macros -Wno-long-long -pedantic -fno-strict-aliasing -pthread -pipe  -DNDEBUG -DTRIMMED -O3 -fstrict-aliasing -finline-limit=50   -DMOZILLA_CLIENT -include ./js-confdefs.h -Wp,-MD,.deps/jsutil.pp jsutil.cpp
+jsxdrapi.cpp
+c++ -o jsxdrapi.o -c -I./dist/system_wrappers_js -include ./config/gcc_hidden.h -DOSTYPE=\"Linux3.14.25-grsec.3\" -DOSARCH=Linux -DEXPORT_JS_API  -DJS_USE_SAFE_ARENA  -I. -I. -I./dist/include -I./dist/include/nsprpub     -I.    -fPIC   -fno-rtti -fno-exceptions -Wall -Wpointer-arith -Woverloaded-virtual -Wsynth -Wno-ctor-dtor-privacy -Wno-non-virtual-dtor -Wcast-align -Wno-invalid-offsetof -Wno-variadic-macros -Wno-long-long -pedantic -fno-strict-aliasing -pthread -pipe  -DNDEBUG -DTRIMMED -O3 -fstrict-aliasing -finline-limit=50   -DMOZILLA_CLIENT -include ./js-confdefs.h -Wp,-MD,.deps/jsxdrapi.pp jsxdrapi.cpp
+jsfun.h: In function ‘js_ArgsPrivateNative* js_GetArgsPrivateNative(JSObject*)’:
+jsfun.h:233: warning: converting to non-pointer type ‘long unsigned int’ from NULL
+jsxml.cpp
+c++ -o jsxml.o -c -I./dist/system_wrappers_js -include ./config/gcc_hidden.h -DOSTYPE=\"Linux3.14.25-grsec.3\" -DOSARCH=Linux -DEXPORT_JS_API  -DJS_USE_SAFE_ARENA  -I. -I. -I./dist/include -I./dist/include/nsprpub     -I.    -fPIC   -fno-rtti -fno-exceptions -Wall -Wpointer-arith -Woverloaded-virtual -Wsynth -Wno-ctor-dtor-privacy -Wno-non-virtual-dtor -Wcast-align -Wno-invalid-offsetof -Wno-variadic-macros -Wno-long-long -pedantic -fno-strict-aliasing -pthread -pipe  -DNDEBUG -DTRIMMED -O3 -fstrict-aliasing -finline-limit=50   -DMOZILLA_CLIENT -include ./js-confdefs.h -Wp,-MD,.deps/jsxml.pp jsxml.cpp
+jsfun.h: In function ‘js_ArgsPrivateNative* js_GetArgsPrivateNative(JSObject*)’:
+jsfun.h:233: warning: converting to non-pointer type ‘long unsigned int’ from NULL
+prmjtime.cpp
+c++ -o prmjtime.o -c -I./dist/system_wrappers_js -include ./config/gcc_hidden.h -DOSTYPE=\"Linux3.14.25-grsec.3\" -DOSARCH=Linux -DEXPORT_JS_API  -DJS_USE_SAFE_ARENA  -I. -I. -I./dist/include -I./dist/include/nsprpub     -I.    -fPIC   -fno-rtti -fno-exceptions -Wall -Wpointer-arith -Woverloaded-virtual -Wsynth -Wno-ctor-dtor-privacy -Wno-non-virtual-dtor -Wcast-align -Wno-invalid-offsetof -Wno-variadic-macros -Wno-long-long -pedantic -fno-strict-aliasing -pthread -pipe  -DNDEBUG -DTRIMMED -O3 -fstrict-aliasing -finline-limit=50   -DMOZILLA_CLIENT -include ./js-confdefs.h -Wp,-MD,.deps/prmjtime.pp prmjtime.cpp
+rm -f libjs_static.a
+ar cr libjs_static.a jsapi.o jsarena.o jsarray.o jsatom.o jsbool.o jscntxt.o jsdate.o jsdbgapi.o jsdhash.o jsdtoa.o jsemit.o jsexn.o jsfun.o jsgc.o jshash.o jsinterp.o jsinvoke.o jsiter.o jslock.o jslog2.o jsmath.o jsnum.o jsobj.o json.o jsopcode.o jsparse.o jsprf.o jsregexp.o jsscan.o jsscope.o jsscript.o jsstr.o jstask.o jsutil.o jsxdrapi.o jsxml.o prmjtime.o  
+ranlib libjs_static.a
+rm -f libmozjs.so
+c++  -fno-rtti -fno-exceptions -Wall -Wpointer-arith -Woverloaded-virtual -Wsynth -Wno-ctor-dtor-privacy -Wno-non-virtual-dtor -Wcast-align -Wno-invalid-offsetof -Wno-variadic-macros -Wno-long-long -pedantic -fno-strict-aliasing -pthread -pipe  -DNDEBUG -DTRIMMED -O3 -fstrict-aliasing -finline-limit=50 -fPIC -shared -Wl,-z,defs -Wl,-h,libmozjs.so -o libmozjs.so  jsapi.o jsarena.o jsarray.o jsatom.o jsbool.o jscntxt.o jsdate.o jsdbgapi.o jsdhash.o jsdtoa.o jsemit.o jsexn.o jsfun.o jsgc.o jshash.o jsinterp.o jsinvoke.o jsiter.o jslock.o jslog2.o jsmath.o jsnum.o jsobj.o json.o jsopcode.o jsparse.o jsprf.o jsregexp.o jsscan.o jsscope.o jsscript.o jsstr.o jstask.o jsutil.o jsxdrapi.o jsxml.o prmjtime.o     -lpthread   -Wl,-rpath-link,/bin -Wl,-rpath-link,/lib   -ldl -lm  -lm -ldl  
+chmod +x libmozjs.so
+/home/lyatesco/ldfees32/vendor/bundle/ruby/2.0.0/gems/pre-johnson-2.0.0/vendor/tracemonkey/config/nsinstall -R -m 755 libmozjs.so ./dist/lib
+/home/lyatesco/ldfees32/vendor/bundle/ruby/2.0.0/gems/pre-johnson-2.0.0/vendor/tracemonkey/config/nsinstall -R -m 755 libmozjs.so ./dist/bin
+/home/lyatesco/ldfees32/vendor/bundle/ruby/2.0.0/gems/pre-johnson-2.0.0/vendor/tracemonkey/config/nsinstall -R -m 755 host_jskwgen host_jsoplengen ./dist/host/bin
+make[2]: Entering directory `/home/lyatesco/ldfees32/vendor/bundle/ruby/2.0.0/gems/pre-johnson-2.0.0/vendor/tracemonkey/config'
+/home/lyatesco/ldfees32/vendor/bundle/ruby/2.0.0/gems/pre-johnson-2.0.0/vendor/tracemonkey/config/nsinstall -R -m 755 nsinstall ../dist/host/bin
+make[2]: Leaving directory `/home/lyatesco/ldfees32/vendor/bundle/ruby/2.0.0/gems/pre-johnson-2.0.0/vendor/tracemonkey/config'
+make[2]: Entering directory `/home/lyatesco/ldfees32/vendor/bundle/ruby/2.0.0/gems/pre-johnson-2.0.0/vendor/tracemonkey/editline'
+editline.c
+gcc -o editline.o -c -I../dist/system_wrappers_js -include ../config/gcc_hidden.h -DANSI_ARROWS -DHAVE_TCGETATTR -DHIDE -DUSE_DIRENT -DSYS_UNIX -DHAVE_STDLIB -DUNIQUE_HISTORY -DOSTYPE=\"Linux3.14.25-grsec.3\" -DOSARCH=Linux  -I. -I. -I../dist/include -I../dist/include/nsprpub          -Wall -W -Wno-unused -Wpointer-arith -Wcast-align -W -Wno-long-long -pedantic -fno-strict-aliasing -pthread -pipe  -DNDEBUG -DTRIMMED -Os -freorder-blocks -fno-reorder-functions -finline-limit=50   -include ../js-confdefs.h -DMOZILLA_CLIENT -Wp,-MD,.deps/editline.pp editline.c
+editline.c: In function ‘meta’:
+editline.c:844: warning: comparison between signed and unsigned
+editline.c:860: warning: comparison between signed and unsigned
+editline.c: In function ‘TTYspecial’:
+editline.c:905: warning: comparison between signed and unsigned
+editline.c:907: warning: comparison between signed and unsigned
+editline.c:915: warning: comparison between signed and unsigned
+editline.c:917: warning: comparison between signed and unsigned
+editline.c:921: warning: comparison between signed and unsigned
+editline.c: In function ‘editinput’:
+editline.c:939: warning: comparison between signed and unsigned
+editline.c:969: warning: pointer targets in passing argument 1 of ‘strlen’ differ in signedness
+editline.c: In function ‘add_history’:
+editline.c:1053: warning: pointer targets in passing argument 2 of ‘strcmp’ differ in signedness
+editline.c: In function ‘quote’:
+editline.c:1116: warning: comparison between signed and unsigned
+editline.c: In function ‘exchange’:
+editline.c:1150: warning: comparison between signed and unsigned
+editline.c:1152: warning: comparison between signed and unsigned
+editline.c: In function ‘move_to_char’:
+editline.c:1189: warning: comparison between signed and unsigned
+editline.c: In function ‘reposition’:
+editline.c:313: warning: passing argument 1 of ‘TTYputs’ discards qualifiers from pointer target type
+editline.c: In function ‘readline’:
+editline.c:1028: warning: passing argument 1 of ‘TTYputs’ discards qualifiers from pointer target type
+editline.c: In function ‘redisplay’:
+editline.c:506: warning: passing argument 1 of ‘TTYputs’ discards qualifiers from pointer target type
+editline.c:507: warning: passing argument 1 of ‘TTYputs’ discards qualifiers from pointer target type
+editline.c: In function ‘h_search’:
+editline.c:659: warning: passing argument 1 of ‘TTYputs’ discards qualifiers from pointer target type
+editline.c:664: warning: passing argument 1 of ‘TTYputs’ discards qualifiers from pointer target type
+sysunix.c
+gcc -o sysunix.o -c -I../dist/system_wrappers_js -include ../config/gcc_hidden.h -DANSI_ARROWS -DHAVE_TCGETATTR -DHIDE -DUSE_DIRENT -DSYS_UNIX -DHAVE_STDLIB -DUNIQUE_HISTORY -DOSTYPE=\"Linux3.14.25-grsec.3\" -DOSARCH=Linux  -I. -I. -I../dist/include -I../dist/include/nsprpub          -Wall -W -Wno-unused -Wpointer-arith -Wcast-align -W -Wno-long-long -pedantic -fno-strict-aliasing -pthread -pipe  -DNDEBUG -DTRIMMED -Os -freorder-blocks -fno-reorder-functions -finline-limit=50   -include ../js-confdefs.h -DMOZILLA_CLIENT -Wp,-MD,.deps/sysunix.pp sysunix.c
+rm -f libeditline.a
+ar cr libeditline.a editline.o sysunix.o  
+ranlib libeditline.a
+make[2]: Leaving directory `/home/lyatesco/ldfees32/vendor/bundle/ruby/2.0.0/gems/pre-johnson-2.0.0/vendor/tracemonkey/editline'
+make[2]: Entering directory `/home/lyatesco/ldfees32/vendor/bundle/ruby/2.0.0/gems/pre-johnson-2.0.0/vendor/tracemonkey/shell'
+js.cpp
+c++ -o js.o -c -I../dist/system_wrappers_js -include ../config/gcc_hidden.h -DEXPORT_JS_API -DOSTYPE=\"Linux3.14.25-grsec.3\" -DOSARCH=Linux -I.. -I.. -I. -I. -I../dist/include -I../dist/include/nsprpub           -fno-rtti -fno-exceptions -Wall -Wpointer-arith -Woverloaded-virtual -Wsynth -Wno-ctor-dtor-privacy -Wno-non-virtual-dtor -Wcast-align -Wno-invalid-offsetof -Wno-variadic-macros -Wno-long-long -pedantic -fno-strict-aliasing -pthread -pipe  -DNDEBUG -DTRIMMED -Os -freorder-blocks -fno-reorder-functions -finline-limit=50   -DMOZILLA_CLIENT -include ../js-confdefs.h -Wp,-MD,.deps/js.pp js.cpp
+../jsfun.h: In function ‘js_ArgsPrivateNative* js_GetArgsPrivateNative(JSObject*)’:
+../jsfun.h:233: warning: converting to non-pointer type ‘long unsigned int’ from NULL
+js.cpp: In function ‘bool ScheduleWatchdog(JSRuntime*, jsdouble)’:
+js.cpp:3493: warning: passing ‘double’ for argument 1 to ‘unsigned int alarm(unsigned int)’
+c++ -o js  -fno-rtti -fno-exceptions -Wall -Wpointer-arith -Woverloaded-virtual -Wsynth -Wno-ctor-dtor-privacy -Wno-non-virtual-dtor -Wcast-align -Wno-invalid-offsetof -Wno-variadic-macros -Wno-long-long -pedantic -fno-strict-aliasing -pthread -pipe  -DNDEBUG -DTRIMMED -Os -freorder-blocks -fno-reorder-functions -finline-limit=50  js.o    -lpthread   -Wl,-rpath-link,/bin -Wl,-rpath-link,/lib  -L../dist/bin -L../dist/lib  ../editline/libeditline.a ../libjs_static.a -ldl -lm      
+/home/lyatesco/ldfees32/vendor/bundle/ruby/2.0.0/gems/pre-johnson-2.0.0/vendor/tracemonkey/config/nsinstall -R -m 755 js ../dist/bin
+/home/lyatesco/ldfees32/vendor/bundle/ruby/2.0.0/gems/pre-johnson-2.0.0/vendor/tracemonkey/config/nsinstall -R -m 755 js ..
+make[2]: Leaving directory `/home/lyatesco/ldfees32/vendor/bundle/ruby/2.0.0/gems/pre-johnson-2.0.0/vendor/tracemonkey/shell'
+make[2]: Entering directory `/home/lyatesco/ldfees32/vendor/bundle/ruby/2.0.0/gems/pre-johnson-2.0.0/vendor/tracemonkey/jsapi-tests'
+tests.cpp
+c++ -o tests.o -c -I../dist/system_wrappers_js -include ../config/gcc_hidden.h -DEXPORT_JS_API -DOSTYPE=\"Linux3.14.25-grsec.3\" -DOSARCH=Linux -I.. -I.. -I. -I. -I../dist/include -I../dist/include/nsprpub           -fno-rtti -fno-exceptions -Wall -Wpointer-arith -Woverloaded-virtual -Wsynth -Wno-ctor-dtor-privacy -Wno-non-virtual-dtor -Wcast-align -Wno-invalid-offsetof -Wno-variadic-macros -Wno-long-long -pedantic -fno-strict-aliasing -pthread -pipe  -DNDEBUG -DTRIMMED -Os -freorder-blocks -fno-reorder-functions -finline-limit=50   -DMOZILLA_CLIENT -include ../js-confdefs.h -Wp,-MD,.deps/tests.pp tests.cpp
+selfTest.cpp
+c++ -o selfTest.o -c -I../dist/system_wrappers_js -include ../config/gcc_hidden.h -DEXPORT_JS_API -DOSTYPE=\"Linux3.14.25-grsec.3\" -DOSARCH=Linux -I.. -I.. -I. -I. -I../dist/include -I../dist/include/nsprpub           -fno-rtti -fno-exceptions -Wall -Wpointer-arith -Woverloaded-virtual -Wsynth -Wno-ctor-dtor-privacy -Wno-non-virtual-dtor -Wcast-align -Wno-invalid-offsetof -Wno-variadic-macros -Wno-long-long -pedantic -fno-strict-aliasing -pthread -pipe  -DNDEBUG -DTRIMMED -Os -freorder-blocks -fno-reorder-functions -finline-limit=50   -DMOZILLA_CLIENT -include ../js-confdefs.h -Wp,-MD,.deps/selfTest.pp selfTest.cpp
+testPropCache.cpp
+c++ -o testPropCache.o -c -I../dist/system_wrappers_js -include ../config/gcc_hidden.h -DEXPORT_JS_API -DOSTYPE=\"Linux3.14.25-grsec.3\" -DOSARCH=Linux -I.. -I.. -I. -I. -I../dist/include -I../dist/include/nsprpub           -fno-rtti -fno-exceptions -Wall -Wpointer-arith -Woverloaded-virtual -Wsynth -Wno-ctor-dtor-privacy -Wno-non-virtual-dtor -Wcast-align -Wno-invalid-offsetof -Wno-variadic-macros -Wno-long-long -pedantic -fno-strict-aliasing -pthread -pipe  -DNDEBUG -DTRIMMED -Os -freorder-blocks -fno-reorder-functions -finline-limit=50   -DMOZILLA_CLIENT -include ../js-confdefs.h -Wp,-MD,.deps/testPropCache.pp testPropCache.cpp
+testXDR.cpp
+c++ -o testXDR.o -c -I../dist/system_wrappers_js -include ../config/gcc_hidden.h -DEXPORT_JS_API -DOSTYPE=\"Linux3.14.25-grsec.3\" -DOSARCH=Linux -I.. -I.. -I. -I. -I../dist/include -I../dist/include/nsprpub           -fno-rtti -fno-exceptions -Wall -Wpointer-arith -Woverloaded-virtual -Wsynth -Wno-ctor-dtor-privacy -Wno-non-virtual-dtor -Wcast-align -Wno-invalid-offsetof -Wno-variadic-macros -Wno-long-long -pedantic -fno-strict-aliasing -pthread -pipe  -DNDEBUG -DTRIMMED -Os -freorder-blocks -fno-reorder-functions -finline-limit=50   -DMOZILLA_CLIENT -include ../js-confdefs.h -Wp,-MD,.deps/testXDR.pp testXDR.cpp
+testIntString.cpp
+c++ -o testIntString.o -c -I../dist/system_wrappers_js -include ../config/gcc_hidden.h -DEXPORT_JS_API -DOSTYPE=\"Linux3.14.25-grsec.3\" -DOSARCH=Linux -I.. -I.. -I. -I. -I../dist/include -I../dist/include/nsprpub           -fno-rtti -fno-exceptions -Wall -Wpointer-arith -Woverloaded-virtual -Wsynth -Wno-ctor-dtor-privacy -Wno-non-virtual-dtor -Wcast-align -Wno-invalid-offsetof -Wno-variadic-macros -Wno-long-long -pedantic -fno-strict-aliasing -pthread -pipe  -DNDEBUG -DTRIMMED -Os -freorder-blocks -fno-reorder-functions -finline-limit=50   -DMOZILLA_CLIENT -include ../js-confdefs.h -Wp,-MD,.deps/testIntString.pp testIntString.cpp
+testIsAboutToBeFinalized.cpp
+c++ -o testIsAboutToBeFinalized.o -c -I../dist/system_wrappers_js -include ../config/gcc_hidden.h -DEXPORT_JS_API -DOSTYPE=\"Linux3.14.25-grsec.3\" -DOSARCH=Linux -I.. -I.. -I. -I. -I../dist/include -I../dist/include/nsprpub           -fno-rtti -fno-exceptions -Wall -Wpointer-arith -Woverloaded-virtual -Wsynth -Wno-ctor-dtor-privacy -Wno-non-virtual-dtor -Wcast-align -Wno-invalid-offsetof -Wno-variadic-macros -Wno-long-long -pedantic -fno-strict-aliasing -pthread -pipe  -DNDEBUG -DTRIMMED -Os -freorder-blocks -fno-reorder-functions -finline-limit=50   -DMOZILLA_CLIENT -include ../js-confdefs.h -Wp,-MD,.deps/testIsAboutToBeFinalized.pp testIsAboutToBeFinalized.cpp
+testSameValue.cpp
+c++ -o testSameValue.o -c -I../dist/system_wrappers_js -include ../config/gcc_hidden.h -DEXPORT_JS_API -DOSTYPE=\"Linux3.14.25-grsec.3\" -DOSARCH=Linux -I.. -I.. -I. -I. -I../dist/include -I../dist/include/nsprpub           -fno-rtti -fno-exceptions -Wall -Wpointer-arith -Woverloaded-virtual -Wsynth -Wno-ctor-dtor-privacy -Wno-non-virtual-dtor -Wcast-align -Wno-invalid-offsetof -Wno-variadic-macros -Wno-long-long -pedantic -fno-strict-aliasing -pthread -pipe  -DNDEBUG -DTRIMMED -Os -freorder-blocks -fno-reorder-functions -finline-limit=50   -DMOZILLA_CLIENT -include ../js-confdefs.h -Wp,-MD,.deps/testSameValue.pp testSameValue.cpp
+testDebugger.cpp
+c++ -o testDebugger.o -c -I../dist/system_wrappers_js -include ../config/gcc_hidden.h -DEXPORT_JS_API -DOSTYPE=\"Linux3.14.25-grsec.3\" -DOSARCH=Linux -I.. -I.. -I. -I. -I../dist/include -I../dist/include/nsprpub           -fno-rtti -fno-exceptions -Wall -Wpointer-arith -Woverloaded-virtual -Wsynth -Wno-ctor-dtor-privacy -Wno-non-virtual-dtor -Wcast-align -Wno-invalid-offsetof -Wno-variadic-macros -Wno-long-long -pedantic -fno-strict-aliasing -pthread -pipe  -DNDEBUG -DTRIMMED -Os -freorder-blocks -fno-reorder-functions -finline-limit=50   -DMOZILLA_CLIENT -include ../js-confdefs.h -Wp,-MD,.deps/testDebugger.pp testDebugger.cpp
+testDefineGetterSetterNonEnumerable.cpp
+c++ -o testDefineGetterSetterNonEnumerable.o -c -I../dist/system_wrappers_js -include ../config/gcc_hidden.h -DEXPORT_JS_API -DOSTYPE=\"Linux3.14.25-grsec.3\" -DOSARCH=Linux -I.. -I.. -I. -I. -I../dist/include -I../dist/include/nsprpub           -fno-rtti -fno-exceptions -Wall -Wpointer-arith -Woverloaded-virtual -Wsynth -Wno-ctor-dtor-privacy -Wno-non-virtual-dtor -Wcast-align -Wno-invalid-offsetof -Wno-variadic-macros -Wno-long-long -pedantic -fno-strict-aliasing -pthread -pipe  -DNDEBUG -DTRIMMED -Os -freorder-blocks -fno-reorder-functions -finline-limit=50   -DMOZILLA_CLIENT -include ../js-confdefs.h -Wp,-MD,.deps/testDefineGetterSetterNonEnumerable.pp testDefineGetterSetterNonEnumerable.cpp
+testExtendedEq.cpp
+c++ -o testExtendedEq.o -c -I../dist/system_wrappers_js -include ../config/gcc_hidden.h -DEXPORT_JS_API -DOSTYPE=\"Linux3.14.25-grsec.3\" -DOSARCH=Linux -I.. -I.. -I. -I. -I../dist/include -I../dist/include/nsprpub           -fno-rtti -fno-exceptions -Wall -Wpointer-arith -Woverloaded-virtual -Wsynth -Wno-ctor-dtor-privacy -Wno-non-virtual-dtor -Wcast-align -Wno-invalid-offsetof -Wno-variadic-macros -Wno-long-long -pedantic -fno-strict-aliasing -pthread -pipe  -DNDEBUG -DTRIMMED -Os -freorder-blocks -fno-reorder-functions -finline-limit=50   -DMOZILLA_CLIENT -include ../js-confdefs.h -Wp,-MD,.deps/testExtendedEq.pp testExtendedEq.cpp
+c++ -o jsapi-tests  -fno-rtti -fno-exceptions -Wall -Wpointer-arith -Woverloaded-virtual -Wsynth -Wno-ctor-dtor-privacy -Wno-non-virtual-dtor -Wcast-align -Wno-invalid-offsetof -Wno-variadic-macros -Wno-long-long -pedantic -fno-strict-aliasing -pthread -pipe  -DNDEBUG -DTRIMMED -Os -freorder-blocks -fno-reorder-functions -finline-limit=50  tests.o selfTest.o testPropCache.o testXDR.o testIntString.o testIsAboutToBeFinalized.o testSameValue.o testDebugger.o testDefineGetterSetterNonEnumerable.o testExtendedEq.o    -lpthread   -Wl,-rpath-link,/bin -Wl,-rpath-link,/lib  -L../dist/bin -L../dist/lib  ../libjs_static.a -ldl -lm      
+/home/lyatesco/ldfees32/vendor/bundle/ruby/2.0.0/gems/pre-johnson-2.0.0/vendor/tracemonkey/config/nsinstall -R -m 755 jsapi-tests ../dist/bin
+make[2]: Leaving directory `/home/lyatesco/ldfees32/vendor/bundle/ruby/2.0.0/gems/pre-johnson-2.0.0/vendor/tracemonkey/jsapi-tests'
+make[2]: Entering directory `/home/lyatesco/ldfees32/vendor/bundle/ruby/2.0.0/gems/pre-johnson-2.0.0/vendor/tracemonkey/tests'
+make[2]: Nothing to be done for `libs'.
+make[2]: Leaving directory `/home/lyatesco/ldfees32/vendor/bundle/ruby/2.0.0/gems/pre-johnson-2.0.0/vendor/tracemonkey/tests'
+/home/lyatesco/ldfees32/vendor/bundle/ruby/2.0.0/gems/pre-johnson-2.0.0/vendor/tracemonkey/config/nsinstall -D dist/sdk/lib
+/home/lyatesco/ldfees32/vendor/bundle/ruby/2.0.0/gems/pre-johnson-2.0.0/vendor/tracemonkey/config/nsinstall -R -m 755 libmozjs.so dist/sdk/lib
+gcc -c -x c -E -P -I. imacro_asm.js.in > imacro_asm.js
+./dist/bin/js imacro_asm.js ./imacros.jsasm > imacros.c.tmp
+imacros.c.out is up to date
+make[1]: Leaving directory `/home/lyatesco/ldfees32/vendor/bundle/ruby/2.0.0/gems/pre-johnson-2.0.0/vendor/tracemonkey'
+make tools
+make[1]: Entering directory `/home/lyatesco/ldfees32/vendor/bundle/ruby/2.0.0/gems/pre-johnson-2.0.0/vendor/tracemonkey'
+make[2]: Entering directory `/home/lyatesco/ldfees32/vendor/bundle/ruby/2.0.0/gems/pre-johnson-2.0.0/vendor/tracemonkey/config'
+make[2]: Nothing to be done for `tools'.
+make[2]: Leaving directory `/home/lyatesco/ldfees32/vendor/bundle/ruby/2.0.0/gems/pre-johnson-2.0.0/vendor/tracemonkey/config'
+make[2]: Entering directory `/home/lyatesco/ldfees32/vendor/bundle/ruby/2.0.0/gems/pre-johnson-2.0.0/vendor/tracemonkey/editline'
+make[2]: Nothing to be done for `tools'.
+make[2]: Leaving directory `/home/lyatesco/ldfees32/vendor/bundle/ruby/2.0.0/gems/pre-johnson-2.0.0/vendor/tracemonkey/editline'
+make[2]: Entering directory `/home/lyatesco/ldfees32/vendor/bundle/ruby/2.0.0/gems/pre-johnson-2.0.0/vendor/tracemonkey/shell'
+make[2]: Nothing to be done for `tools'.
+make[2]: Leaving directory `/home/lyatesco/ldfees32/vendor/bundle/ruby/2.0.0/gems/pre-johnson-2.0.0/vendor/tracemonkey/shell'
+make[2]: Entering directory `/home/lyatesco/ldfees32/vendor/bundle/ruby/2.0.0/gems/pre-johnson-2.0.0/vendor/tracemonkey/jsapi-tests'
+make[2]: Nothing to be done for `tools'.
+make[2]: Leaving directory `/home/lyatesco/ldfees32/vendor/bundle/ruby/2.0.0/gems/pre-johnson-2.0.0/vendor/tracemonkey/jsapi-tests'
+make[2]: Entering directory `/home/lyatesco/ldfees32/vendor/bundle/ruby/2.0.0/gems/pre-johnson-2.0.0/vendor/tracemonkey/tests'
+make[2]: Nothing to be done for `tools'.
+make[2]: Leaving directory `/home/lyatesco/ldfees32/vendor/bundle/ruby/2.0.0/gems/pre-johnson-2.0.0/vendor/tracemonkey/tests'
+make[1]: Leaving directory `/home/lyatesco/ldfees32/vendor/bundle/ruby/2.0.0/gems/pre-johnson-2.0.0/vendor/tracemonkey'
+checking for jsautocfg.h in /home/lyatesco/ldfees32/vendor/bundle/ruby/2.0.0/gems/pre-johnson-2.0.0/vendor/tracemonkey... yes
+checking for jsapi.h in /home/lyatesco/ldfees32/vendor/bundle/ruby/2.0.0/gems/pre-johnson-2.0.0/vendor/tracemonkey... yes
+creating Makefile
+
+make "DESTDIR="
+compiling idhash.cc
+compiling split_global.cc
+compiling extensions.cc
+compiling conversions.cc
+In file included from conversions.cc:2:
+js_land_proxy.h:11:18: error: node.h: No such file or directory
+conversions.cc:261:8: warning: extra tokens at end of #endif directive
+js_land_proxy.h:17: error: ISO C++ forbids declaration of ‘NODE’ with no type
+js_land_proxy.h:17: error: expected ‘;’ before ‘*’ token
+conversions.cc: In function ‘JSBool convert_symbol_to_js(JohnsonRuntime*, VALUE, jsval*)’:
+conversions.cc:33: error: ‘ruby_errinfo’ was not declared in this scope
+conversions.cc:34: error: ‘ruby_errinfo’ was not declared in this scope
+conversions.cc:35: error: ‘struct RString’ has no member named ‘len’
+conversions.cc: In function ‘JSBool convert_regexp_to_js(JohnsonRuntime*, VALUE, jsval*)’:
+conversions.cc:54: error: ‘ruby_errinfo’ was not declared in this scope
+conversions.cc:55: error: ‘ruby_errinfo’ was not declared in this scope
+conversions.cc:56: error: ‘ruby_errinfo’ was not declared in this scope
+conversions.cc:60: error: ‘struct RString’ has no member named ‘len’
+conversions.cc: In function ‘JSBool convert_to_js(JohnsonRuntime*, VALUE, jsval*)’:
+conversions.cc:86: error: ‘T_BLKTAG’ was not declared in this scope
+conversions.cc:98: error: ‘T_VARMAP’ was not declared in this scope
+conversions.cc:116: error: ‘ruby_errinfo’ was not declared in this scope
+conversions.cc:118: error: ‘struct RString’ has no member named ‘len’
+conversions.cc: In function ‘VALUE convert_regexp_to_ruby(JohnsonRuntime*, jsval)’:
+conversions.cc:204: error: ‘ruby_errinfo’ was not declared in this scope
+conversions.cc:204: error: ‘ruby_errinfo’ was not declared in this scope
+conversions.cc: In function ‘VALUE convert_to_ruby(JohnsonRuntime*, jsval)’:
+conversions.cc:265: error: ‘ruby_errinfo’ was not declared in this scope
+conversions.cc:265: error: ‘ruby_errinfo’ was not declared in this scope
+conversions.cc:271: error: ‘ruby_errinfo’ was not declared in this scope
+conversions.cc:271: error: ‘ruby_errinfo’ was not declared in this scope
+conversions.cc:279: error: ‘ruby_errinfo’ was not declared in this scope
+conversions.cc:279: error: ‘ruby_errinfo’ was not declared in this scope
+conversions.cc:281: error: ‘ruby_errinfo’ was not declared in this scope
+conversions.cc:281: error: ‘ruby_errinfo’ was not declared in this scope
+conversions.cc:288: error: ‘ruby_errinfo’ was not declared in this scope
+conversions.cc:288: error: ‘ruby_errinfo’ was not declared in this scope
+conversions.cc:292: error: ‘ruby_errinfo’ was not declared in this scope
+conversions.cc:292: error: ‘ruby_errinfo’ was not declared in this scope
+conversions.cc: In function ‘JSBool report_ruby_error_in_js(JohnsonRuntime*, int, VALUE)’:
+conversions.cc:337: error: ‘ruby_errinfo’ was not declared in this scope
+make: *** [conversions.o] Error 1

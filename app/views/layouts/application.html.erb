@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Las Delicias Fees Program</title>
+  <%= stylesheet_link_tag :all %>
+  <%= javascript_include_tag 'jquery','rails', :cache=>true %>
+   <%=jqgrid_javascripts%>
+<%=jqgrid_stylesheets "default"%> 
+  <%= csrf_meta_tag %>
+  <style>
+  #backstageArea {
+    background: none repeat scroll 0 0 #00aaaa;
+    color: #333333;
+    font-family: arial,helvetica;
+    font-size: 1.6em;
+    line-height: 25px;
+}
+#backstageArea a {
+    background: none repeat scroll 0 0 #00aaaa;
+    border: medium none;
+    color: #FFFFFF;
+    text-decoration: none;
+    font-weight:bold; margin-left:0.5em; padding:0.0em 0.5em;
+}
+#backstageArea a:hover {
+    background: none repeat scroll 0 0 #FFEE88;
+    color: #000000;
+}
+#backstageArea a.backstageSelTab {
+    background: none repeat scroll 0 0 #FFFFFF;
+    color: #000000;
+}
+#backstageButton a {
+    background: none repeat scroll 0 0 transparent;
+    border: medium none;
+    color: #FFFFFF;
+}
+#backstageButton a:hover {
+    background: none repeat scroll 0 0 #blue;
+    border: medium none;
+    color: #FFFFFF;
+}
+#backstagePanel {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border-color: #FFFFFF #666666 #666666;
+}
+.backstagePanelFooter .button {
+    border: medium none;
+    color: #FFFFFF;
+}
+.backstagePanelFooter .button:hover {
+    color: #000000;
+}
+#backstageCloak {
+    background: none repeat scroll 0 0 #000000;
+    opacity: 0.6;
+}
+
+</style>
+  <script>
+jQuery(document).ready(function(){
+
+  jQuery("#mfeefiles").click( function(){
+	var id = jQuery("#feefiles"); 
+	if (id)	{
+      var ret = jQuery("#feefiles");
+                 window.location.href= "/feefiles";
+	} else { alert("Please select down row");}
+});
+    jQuery("#mexfiles").click( function(){
+	var id = jQuery("#feefiles"); 
+        /*var id = jQuery("#feefiles").getGridParam('selrow');*/
+	if (id)	{
+      var ret = jQuery("#feefiles");
+                window.location.href= "/extracteds";
+	} else { alert("Please select down row");}
+});
+    jQuery("#mupload").click( function(){
+	var id = jQuery("#feefiles"); 
+	if (id)	{
+      var ret = jQuery("#feefiles");
+                window.location.href= "/feefiles/new";
+	} else { alert("Please select down row");}
+});
+        jQuery("#mcomparison").click( function(){
+	var id = jQuery("#feefiles"); 
+	if (id)	{
+      var ret = jQuery("#feefiles");
+                window.location.href= "/comparisons";
+	} else { alert("Please select down row");}
+});  
+    
+});
+</script>
+</head>
+<body>
+  
+<div id="backstageArea" style="display: block;">
+
+<div id="backstageToolbar" style="left: 0px; overflow: visible;">
+==>
+<a class="backstageTab backstageAction" href="javascript:;" title="List of Feefiles" id="mfeefiles">Feefiles</a>
+<a class="backstageTab backstageAction" href="javascript:;" title="List of Extracted Files" id="mexfiles">Extracted files</a>
+<a class="backstageTab backstageAction" href="javascript:;" title="Upload a Fee File<" id="mupload">Upload</a>
+<a class="backstageTab backstageAction" href="javascript:;" title="Show Debtors & Comparison<" id="mcomparison">Debtor Comparison</a>
+ </div>
+</div>
+<p>
+  <% if current_user %>
+    Hello <%= current_user.name %> (<%= link_to 'Not you?', logout_path, :method => :delete %>)
+  <% end %>
+</p>
+
+<%= yield %>
+
+</body>
+</html>

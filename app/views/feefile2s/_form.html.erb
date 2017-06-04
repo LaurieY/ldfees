@@ -1,0 +1,15 @@
+<% @feefile.feefilename %>
+
+<%= form_for(@feefile, :html => {:multipart => true}) do |f| %>
+ 
+  <p><h2>
+    <%= f.label "Fee File Name #{@feefile.feefilename}" %><br />
+    <%= f.file_field :feefilename %><br /><p>
+    <% if not @fenddate.nil? %>
+    <%= f.label "Fee File End Date calculated - " %><br />
+    <%= f.text_field :enddate %><br /><p>
+    <% end %>
+  </h2></p>
+  <p>
+    <%= f.submit "Create" %>
+  </p><% end %>

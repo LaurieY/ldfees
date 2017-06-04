@@ -1,0 +1,19 @@
+= form_for @feefile do |f|
+  -if @feefile.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@feefile.errors.count, "error")} prohibited this feefile from being saved:"
+      %ul
+        - @feefile.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :feefilename
+    = f.text_field :feefilename
+  .field
+    = f.label :feefiletitle
+    = f.text_field :feefiletitle
+  .field
+    = f.label :feefiletype
+    = f.text_field :feefiletype
+  .actions
+    = f.submit 'Save'

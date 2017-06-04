@@ -1,0 +1,1 @@
+../../../tracemonkey/jsstaticcheck.h

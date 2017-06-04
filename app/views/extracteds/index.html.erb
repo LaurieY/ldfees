@@ -1,0 +1,64 @@
+<h1> Index of Extracted Files </h1>
+<script type="text/javascript">
+
+jQuery(document).ready(function(){
+
+  jQuery("#download").click( function(){
+	  var id = jQuery("#extracteds").jqGrid('getGridParam','selrow'); 
+	 
+	  if (id)	{
+	var ret = jQuery("#extracteds").jqGrid('getRowData',id);
+  //    console.log(id);
+		  window.location.href= "feefiles/"+ret.feefile_id+"/download";
+	  } else { alert("Please select row for download");}
+  });
+  
+    jQuery("#display").click( function(){
+	  var id = jQuery("#extracteds").jqGrid('getGridParam','selrow'); 
+     console.log("ID = "+id);
+     
+	  if (id)	{
+	var ret = jQuery("#extracteds").jqGrid('getRowData',id);
+	   
+      console.log("feefile id = "+ret.feefile_id);
+		    window.location.href= "extracteds/"+ret.feefile_id+"";
+	  } else { alert("Please select row to display");}
+  });
+})
+
+
+ 
+</script>
+<%= raw jqgrid("", "extracteds", "/extracteds", 
+[ 
+ { :field => "name", :label => "extract name" ,},    
+
+ { :field => "created_at", :label => "Created at", },   
+{ :field => "startdate", :label => "Start Date" ,},
+{ :field => "enddate", :label => "End Date" ,}, 
+{ :field => "totalfees", :label => "Total Fees", }, 
+ { :field => "totalpayments", :label => "Total Payments" ,},    
+   { :field => "totalrows", :label => "Total Rows" ,},
+     { :field => "feefile_id", :label => "feefile", }
+],
+{:autowidth=>true,:rows_per_page => 20, :height=>350,:rowlist=> '[10,20,100]',
+:delete=>true,
+:edit_url => "/extracteds/post_data",
+#:selection_handler => "handleSelection"
+#:customButtons=> [{:caption => '', :title => 'Merge', :buttonicon => 'ui-icon-add', :onClickButton => %Q/ function(){ alert("Adding Row");} /, :position => 'last', :separator => 'before'}]
+}
+) %>
+
+</br>
+
+</br>
+<button id="download" class="ui-state-default ui-corner-all" type="submit">Download the Extracted file from Selected Row</button>
+</br>
+</br>
+<button id="display" class="ui-state-default ui-corner-all" type="submit">Display the Extracted file from Selected Row</button>
+</br>
+</br>
+
+
+
+

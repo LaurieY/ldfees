@@ -1,0 +1,1 @@
+../../../tracemonkey/jsautocfg.h

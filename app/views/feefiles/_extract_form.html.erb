@@ -1,0 +1,14 @@
+<h1>Processing feefile 
+<%=  @feefile.feefilename %>
+</h1>
+</p>
+  <p>
+
+<h2>
+  <%= label_tag "Fee File Start Date for Processing" %>
+  <%= form_tag(feefile_extracted_path(@feefile)) %>
+  <%= text_field_tag('enddate',@feefile.enddate.strftime("%d/%m/%Y") ) %>
+</h2> 
+  <%=submit_tag "Process" %>
+  <br />
+

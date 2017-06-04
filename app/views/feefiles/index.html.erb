@@ -1,0 +1,105 @@
+<h1> Index of Feefiles </h1>
+<script type="text/javascript">
+
+
+jQuery(document).ready(function(){
+
+  jQuery("#download").click( function(){
+	var id = jQuery("#feefiles").jqGrid('getGridParam','selrow'); 
+        /*var id = jQuery("#feefiles").getGridParam('selrow');*/
+	if (id)	{
+      var ret = jQuery("#feefiles").jqGrid('getRowData',id);
+//    console.log(id);
+//    console.log(this.id);
+//		alert("idz="+id+",,,")
+//                alert("feefilename="+ret.feefilename+"...");
+                window.location.href= "feefiles/"+id+"/download";
+	} else { alert("Please select down row");}
+});
+  jQuery("#extract").click( function(){
+	var id = jQuery("#feefiles").jqGrid('getGridParam','selrow'); 
+        /*var id = jQuery("#feefiles").getGridParam('selrow');*/
+	if (id)	{
+      var ret = jQuery("#feefiles").jqGrid('getRowData',id);
+    //console.log(id);
+    //console.log(ret);
+		//alert("idz="+id+",,,")
+                //alert("feefilename="+ret.feefilename+"...");
+                window.location.href= "feefiles/"+id+"/extract";
+	} else { alert("Please select a row");}
+});
+  jQuery("#debtor").click( function(){
+	var id = jQuery("#feefiles").jqGrid('getGridParam','selrow'); 
+        /*var id = jQuery("#feefiles").getGridParam('selrow');*/
+	if (id)	{
+      var ret = jQuery("#feefiles").jqGrid('getRowData',id);
+    //console.log(id);
+    //console.log(ret);
+		//alert("idz="+id+",,,")
+                //alert("feefilename="+ret.feefilename+"...");
+                window.location.href= "feefiles/"+id+"/debtor";
+	} else { alert("Please select a row");}
+});
+  jQuery("#display").click( function(){
+	var id = jQuery("#feefiles").jqGrid('getGridParam','selrow'); 
+  
+	if (id)	{
+      var ret = jQuery("#feefiles").jqGrid('getRowData',id);
+          console.log(id);
+    console.log(ret);
+                  window.location.href= "extracteds/"+id+"";
+	} else { alert("Please select a row");}
+});
+
+  jQuery("#upload").click( function(){
+	
+    console.log("in Upload");
+
+    window.location.href= 'feefiles/new';
+	
+	
+});
+})
+
+
+</script>
+<%= raw jqgrid("", "feefiles", "/feefiles", 
+[ 
+{ :field => "feefilename", :label => "Fee File", }, 
+   
+{ :field => "startdate", :label => "Start Date" ,},
+{ :field => "enddate", :label => "End Date" ,}, 
+ { :field => "extractfilename", :label => "extractfilename" ,}, 
+ { :field => "extractstartdate", :label => "extractstartdate" ,},    
+  
+],
+{:autowidth=>true,:rows_per_page => 20, :height=>350,:rowlist=> '[10,20,100]',
+:delete=>true,
+:edit_url => "/feefiles/post_data",
+#:selection_handler => "handleSelection"
+#:customButtons=> [{:caption => '', :title => 'Merge', :buttonicon => 'ui-icon-add', :onClickButton => %Q/ function(){ alert("Adding Row");} /, :position => 'last', :separator => 'before'}]
+}
+) %>
+
+</br>
+</br>
+<button id="upload" class="ui-state-default ui-corner-all" type="submit">Upload a New Fee File </button>
+</br>
+</br>
+<button id="extract" class="ui-state-default ui-corner-all" type="submit">Extract from Selected Row</button>
+</br>
+</br>
+<button id="display" class="ui-state-default ui-corner-all" type="submit">Display the Extracted file from Selected Row</button>
+</br>
+</br>
+<button id="download" class="ui-state-default ui-corner-all" type="submit">Download the Extracted file from Selected Row</button>
+</br>
+</br>
+<button id="debtor" class="ui-state-default ui-corner-all" type="submit">Produce Debtors list from Selected Row</button>
+</br>
+
+</h3>
+
+
+
+

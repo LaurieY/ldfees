@@ -1,0 +1,29 @@
+%p#notice= notice
+%table
+  %tr
+    %th Extracted File Name
+    %th Date Created
+    %th First Date in File
+    %th Latest Date in File
+    %th Total Fees in File
+    %th Total Payments in File
+    %th Number of Rows in File
+    %th
+    %th
+    
+  - @exfiles.each do |exfile|
+    %tr
+      %td= exfile['name']
+      %td= exfile['created_at'].strftime("%d/%m/%Y")
+      %td= exfile['startdate'].strftime("%d/%m/%Y")      
+      %td= exfile['enddate'].strftime("%d/%m/%Y")
+      %td= exfile['totalfees']
+      %td= exfile['totalpayments']
+      %td= exfile['totalrows']
+
+      %td= link_to 'Display', extracted_show_path(exfile['feefile_id'])
+      %td= link_to 'Analyse', extracted_analyse_path(exfile['feefile_id']) 
+%br
+<h2>
+
+</h2>

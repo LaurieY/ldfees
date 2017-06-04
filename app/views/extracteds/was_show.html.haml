@@ -1,0 +1,27 @@
+%h1 Extracted#show
+%table
+  %tbody
+    %tr
+      %th Owner
+      %th Ref:
+      %th Property
+      %th Coeff.
+      %th Date
+      %th Fees
+      %th Payments
+      %th 
+
+  - @extracted.each do |row|
+    %tr
+      %td=row.owner
+      %td=row.reference
+      %td=row.property
+      %td=row.coefficient
+      %td=row.adate
+      %td=row.fees
+      %td=row.payments
+
+<hr />
+%p
+  = will_paginate @extracted
+= link_to 'Back', extracteds_path

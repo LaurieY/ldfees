@@ -1,0 +1,45 @@
+%p#notice= notice
+%h1="Showing details of feefile - #{@feefile.feefilename  }"
+
+
+%p
+  %b End Date in File:
+  - if not @feefile.enddate.nil?
+    = @feefile.enddate.strftime("%d/%m/%Y")
+
+
+%p
+  %b Extracted Filename:
+  =@feefile.extractfilename  
+%p
+  %b Extracted Start Date
+  - if not @feefile.extractstartdate.nil?
+    =@feefile.extractstartdate.strftime("%d/%m/%Y")
+
+%p
+
+
+%p
+  %b Computed Earliest Date:
+  = @feefile_dates[0]
+%p
+  %b Computed Latest Date:
+  = @feefile_dates[1]
+  <br />
+%hr
+  %h2
+    ="---> "
+    = link_to 'Display this Fee File', feefile2_display_path(@feefile)
+%p
+  %h2
+    =" -----------> "
+    = link_to 'Extract from this Fee File', feefile_extract_path(@feefile)
+%p
+  %h2
+    - if not @feefile.extractfilename.nil?
+      =" -----------------> "
+      = link_to 'Download the extracted file', feefile_download_path(@feefile)
+
+%p
+  %h2
+    = link_to 'Back', feefiles_path

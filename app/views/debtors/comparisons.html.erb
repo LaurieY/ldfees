@@ -1,0 +1,45 @@
+<h1> Listing Debtors </h1>
+
+<script type="text/javascript">
+
+jQuery(document).ready(function(){
+
+   jQuery("#download").click( function(){
+	  //var id = jQuery("#ocmsummaries").jqGrid('getGridParam','selrow'); 
+	 
+	 
+	//var ret = jQuery("#ocmsummaries").jqGrid('getRowData',id);
+  //    console.log(id);
+		  window.location.href= "debtors/download";
+	
+  });
+})
+
+
+ 
+</script>
+<%= raw jqgrid("", "comparisons", "/comparisons", 
+[ 
+ { :field => "reference4", :label => "Ref4" ,},    
+ { :field => "reference2", :label => "Ref" ,}, 
+ { :field => "property", :label => "Property", },   
+{ :field => "owner", :label => "Owner" ,},
+{ :field => "sbalance", :label => "S-Balance" ,},
+{ :field => "obalance", :label => "O-Balance" ,},
+{ :field => "indicator", :label => "Indicator" ,}
+],
+
+{:autowidth=>true,:rows_per_page => 100, :height=>520,:rowlist=> '[10,20,60,100]',
+:delete=>false,
+:edit_url => "/comparisons/post_data",
+#:selection_handler => "handleSelection"
+#:customButtons=> [{:caption => '', :title => 'Merge', :buttonicon => 'ui-icon-add', :onClickButton => %Q/ function(){ alert("Adding Row");} /, :position => 'last', :separator => 'before'}]
+}
+) %>
+
+</br>
+
+</br>
+<button id="download" class="ui-state-default ui-corner-all" type="submit">Download the Comparison Listing</button>
+</br>
+</br>

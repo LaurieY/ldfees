@@ -1,0 +1,41 @@
+%p#notice= notice
+%h1="Showing details of feefile - #{@feefile.feefilename  }"
+
+
+%p
+  %b Start Date in File:
+  - if not @feefile.startdate.nil?
+    = @feefile.startdate.strftime("%d/%m/%Y")
+%p
+  %b End Date in File:
+  - if not @feefile.enddate.nil?
+    = @feefile.enddate.strftime("%d/%m/%Y")
+
+%p
+  %b Extracted Filename:
+  =@feefile.extractfilename  
+%p
+  %b Extracted Start Date
+  - if not @feefile.extractstartdate.nil?
+    =@feefile.extractstartdate.strftime("%d/%m/%Y")
+
+%p
+
+  <br />
+%hr
+  %h2
+    ="---> "
+    = link_to 'Display this Fee File', feefile_display_path(@feefile)
+%p
+  %h2
+    =" -----------> "
+    = link_to 'Extract from this Fee File', feefile_extract_path(@feefile)
+%p
+  %h2
+    - if not @feefile.extractfilename.nil?
+      =" -----------------> "
+      = link_to 'Download the extracted file', feefile_download_path(@feefile)
+
+%p
+  %h2
+    = link_to 'Back', feefiles_path

@@ -1,0 +1,24 @@
+<h2>
+<%= "Listing of Extracted File #{@exfilename.extractfilename}" %>
+</h2>
+
+<%= raw jqgrid("Listing of extracted file ", "extracted", "/extracteds/#{params[:id]}", 
+[ 
+   
+{ :field => "owner", :label => "Owner",:width=>200 }, 
+   
+{ :field => "reference", :label => "Ref:" ,:width=>50},
+{ :field => "property", :label => "Property" ,:width=>120}, 
+ { :field => "coefficient", :label => "Coeff." ,:width=>50}, 
+ { :field => "adate", :label => "Date" ,:width=>'70px'},    
+  { :field => "subject", :label => "Subject",:width=>300, :resizable=>true },
+   { :field => "fees", :label => "Fees" ,:width=>50},
+   { :field => "payments", :label => "Payments",:width=>50 },
+    { :field => "name", :label => "name", :hidden=> true}
+],
+{:autowidth=>true,:rows_per_page => 20, :height=>450,:rowlist=> '[20,40,1000]', 
+#:customButtons=> [{:caption => '', :title => 'Merge', :buttonicon => 'ui-icon-add', :onClickButton => %Q/ function(){ alert("Adding Row");} /, :position => 'last', :separator => 'before'}]
+}
+) %>
+
+

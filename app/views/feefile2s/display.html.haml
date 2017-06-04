@@ -1,0 +1,52 @@
+%p#notice= notice
+
+%p
+  %b Feefile Name:
+  =@feefile.feefilename
+
+  %b
+  =" -----------------> "
+  = link_to 'Process this File', feefile_extract_path(@feefile)
+%p
+  %b Feefile Earliest Date:
+  = @feefile_dates[0]
+%p
+  %b Feefile Latest Date:
+  = @feefile_dates[1]
+  <br />
+  
+%table
+  %tbody
+    %th
+      Fecha
+    %th
+      Asiento
+    %th
+      Documento  
+    %th
+      Concepto
+    %th
+      col4
+    %th
+      col5
+    %th
+      col6
+    %th
+      Importe Debe
+    %th
+      cblank
+    %th
+      Importe Haber
+    %th
+      cblank
+    %th
+      Saldo      
+    - @feefile_rows.each do |row|
+      %tr
+        - row.each do |column|
+          %td= column 
+
+<hr />
+%p
+  = will_paginate @feefile_rows
+= link_to 'Back', feefiles_path

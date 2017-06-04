@@ -1,0 +1,10 @@
+---
+fees: uploads/MAYORES A 25.05.17.XLS
+output: uploads/MAYORES A 25.05.17.XLS-out.csv
+xref: uploads/xref4.xls
+template: uploads/fees_template_290517.csv
+options:
+- "-a"
+- "-c"
+- "-s"
+- 30/12/2016

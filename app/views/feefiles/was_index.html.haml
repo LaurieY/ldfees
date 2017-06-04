@@ -1,0 +1,46 @@
+%h1 Listing feefiles
+
+%table
+  %tr
+    %th Feefilename
+    %th Start Date
+    %th End Date
+    %th Extracted Filename
+    %th Extracted Start Date
+    %th
+    %th
+    %th
+    %th
+
+  - @feefiles.each do |feefile|
+    %tr
+      %td= feefile.feefilename
+      - if not feefile.startdate.nil?
+        %td= feefile.startdate.strftime("%d/%m/%Y")
+      - else
+        %td    
+      - if not feefile.enddate.nil?
+        %td= feefile.enddate.strftime("%d/%m/%Y")
+      - else
+        %td
+      %td= feefile.extractfilename
+      - if not feefile.extractstartdate.nil?
+        %td= feefile.extractstartdate.strftime("%d/%m/%Y")
+      - else
+        %td 
+      
+
+      %td= link_to 'Show', feefile
+      %td= link_to 'Destroy', feefile, :confirm => 'Are you sure?', :method => :delete
+      %td= "------------->"
+      %td=button_to 'Extract from this File', feefile_extract_path(feefile),:method => :get
+      - if not feefile.extractfilename.nil?
+        %td= "------------->"
+        %td=button_to 'Download the extracted File', feefile_download_path(feefile),:method => :get
+ 
+
+%br
+<h2>
+
+</h2>
+= link_to 'Upload a Fee File', new_feefile_path

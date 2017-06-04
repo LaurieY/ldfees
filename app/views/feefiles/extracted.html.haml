@@ -1,0 +1,14 @@
+%h1 Processed feefile
+%h1=@feefile.feefilename
+%p
+=@ps.inspect
+
+<br />
+- @feesinfo.each do |feeinfo|
+  = feeinfo
+  <br />
+
+
+= link_to 'Show', @feefile
+\|
+= link_to 'Back', feefiles_path

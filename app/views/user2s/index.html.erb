@@ -1,0 +1,13 @@
+USER2S Index Page
+
+<%= raw jqgrid("Listing user2s", "user2s", "/user2s", 
+[ 
+   
+  { :field => "id", :label => "id" }, 
+   
+  { :field => "name", :label => "name" }, 
+   
+  { :field => "email", :label => "email" }, 
+   
+  ] , {:autowidth=>true, :add=> true,:edit_url => "/user2s/post_data",} 
+  ) %>

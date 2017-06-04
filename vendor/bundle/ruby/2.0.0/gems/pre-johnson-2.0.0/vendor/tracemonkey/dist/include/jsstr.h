@@ -1,0 +1,1 @@
+../../../tracemonkey/jsstr.h
